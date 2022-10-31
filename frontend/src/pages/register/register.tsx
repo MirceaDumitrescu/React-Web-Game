@@ -1,25 +1,27 @@
+import './register.scss'
+
 const RegisterComponent = () => {
   return (
-    <div className='container'>
+    <div className='container flex-col'>
       <form className='submit-form'>
         <h4>Register Form</h4>
-        <div>
+        <div className='input-group flex-col'>
           <label>Name:</label>
           <input type='text' name='name' className='form-input'></input>
         </div>
-        <div>
+        <div className='input-group flex-col'>
           <label>Email address:</label>
-          <input type='email' name='email'></input>
+          <input type='email' name='email' className='form-input'></input>
         </div>
-        <div>
+        <div className='input-group flex-col'>
           <label>Password:</label>
-          <input type='password' name='password'></input>
+          <input type='password' name='password' className='form-input'></input>
         </div>
-        <div>
+        <div className='input-group flex-col'>
           <label>Confirm password:</label>
-          <input type='password' name='confirmPass'></input>
+          <input type='password' name='confirmPass' className='form-input'></input>
         </div>
-        <button type='submit'></button>
+        <button type='submit'>Register</button>
       </form>
     </div>
   )

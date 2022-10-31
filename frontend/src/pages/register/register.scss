@@ -1,0 +1,12 @@
+@import './src/variables.scss';
+
+.container {
+  text-align: center;
+  font-family: $ff-menu;
+  font-weight: $weight-600;
+  .submit-form {
+    button {
+      background-color: $p-green;
+    }
+  }
+}

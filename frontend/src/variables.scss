@@ -1,0 +1,146 @@
+//////////////////////
+// colors           //
+/////////////////////
+// primary colors
+$p-black: hsl(0, 0%, 0%);
+$p-white: hsl(0, 0%, 100%);
+$p-green: hsl(147, 50%, 47%);
+$p-yellow: hsl(39, 100%, 50%);
+
+// accent
+$a-purple: hsl(248, 53%, 58%);
+$a-grey: hsl(211, 12%, 48%);
+
+//////////////////////
+// fonts            //
+/////////////////////
+
+$ff-menu: 'MedievalSharp', cursive;
+$ff-danger: 'Viaoda Libre', cursive;
+$ff-succes: 'Island Moments', cursive;
+$ff-text: 'Crimson Text', serif;
+
+//////////////////////
+// typography       //
+/////////////////////
+
+// font-sizes
+$fs-small: 14px;
+$fs-medium: 18px;
+$fs-large: 22px;
+
+//  font-weights
+$weight-900: 900;
+$weight-800: 800;
+$weight-700: 700;
+$weight-600: 600;
+$weight-500: 500;
+$weight-400: 400;
+$weightL-300: 300;
+$weight-200: 200;
+$weight-100: 100;
+
+//////////////////////
+// utility var.     //
+/////////////////////
+/// width
+$width-100: 100%;
+$width-75: 75%;
+$width-50: 50%;
+//////////////////////
+/// height
+$height-100: 100%;
+$height-75: 75%;
+$height-50: 50%;
+//////////////////////
+/// gap
+$gap-large: 2em;
+$gap-medium: 1em;
+$gap-small: 0.5em;
+//////////////////////
+/// border-radius
+$br-50: 50%;
+$br-40: 40%;
+$br-30: 30%;
+$br-20: 20%;
+$br-10: 10%;
+//////////////////////
+/// border-syle
+$b-0: none;
+$bs-1: solid 1px;
+$bs-2: solid 2px;
+$bs-3: solid 3px;
+
+//////////////////////
+// utility classe   //
+/////////////////////
+
+// display : grid & flex
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+// predefined margins
+
+// top
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+// bottom
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+// all-around
+.m-10 {
+  margin: 10px;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.m-30 {
+  margin: 30px;
+}
