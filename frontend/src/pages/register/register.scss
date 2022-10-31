@@ -1,12 +1,50 @@
 @import './src/variables.scss';
 
-.container {
+.form__container {
+  @include flex(column, center, center);
   text-align: center;
   font-family: $ff-menu;
   font-weight: $weight-600;
-  .submit-form {
-    button {
+  color: $p-white;
+
+  h4 {
+    font-size: $fs-large;
+    font-family: $ff-menu;
+    letter-spacing: 0.1em;
+  }
+
+  .form__submit {
+    @include flex(column, center, center);
+    gap: $gap-medium;
+    margin: $m-30;
+    background-color: $p-black;
+    width: 40%;
+    border-radius: $br-20;
+    padding: 20px;
+
+    .form__input-group {
+      @include flex(column, center, center);
+      gap: $gap-small;
+
+      .form__input {
+        text-align: center;
+        width: 200px;
+        height: 30px;
+        border: $bs-3 $p-green;
+        border-radius: $br-10;
+        font-family: $ff-menu;
+        font-weight: $weight-600;
+      }
+    }
+    .form__btn {
+      cursor: pointer;
       background-color: $p-green;
+      font-family: $ff-menu;
+      padding: 10px;
+      font-size: $fs-medium;
+      font-weight: $weight-600;
+      border: $b-0;
+      border-radius: $br-10;
     }
   }
 }
