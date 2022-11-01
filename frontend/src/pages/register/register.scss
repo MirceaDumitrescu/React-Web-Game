@@ -1,32 +1,36 @@
-@import './src/variables.scss';
+@import '../../variables.scss';
 
-.form__container {
+.card {
   @include flex(column, center, center);
   text-align: center;
   font-family: $ff-menu;
   font-weight: $weight-600;
   color: $p-white;
+  background: url('../../assets/menu-background.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 
-  h4 {
-    font-size: $fs-large;
-    font-family: $ff-menu;
-    letter-spacing: 0.1em;
-  }
-
-  .form__submit {
+  &__form {
     @include flex(column, center, center);
     gap: $gap-medium;
     margin: $m-30;
-    background-color: $p-black;
+    background-color: $t-black;
     width: 40%;
     border-radius: $br-20;
     padding: 20px;
 
-    .form__input-group {
+    &__title {
+      font-size: $fs-large;
+      font-family: $ff-menu;
+      letter-spacing: 0.1em;
+    }
+
+    &__group {
       @include flex(column, center, center);
       gap: $gap-small;
 
-      .form__input {
+      &__input {
         text-align: center;
         width: 200px;
         height: 30px;
@@ -36,7 +40,8 @@
         font-weight: $weight-600;
       }
     }
-    .form__btn {
+
+    &__btn {
       cursor: pointer;
       background-color: $p-green;
       font-family: $ff-menu;

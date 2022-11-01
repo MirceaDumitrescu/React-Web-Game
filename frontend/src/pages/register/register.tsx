@@ -2,26 +2,26 @@ import './register.scss'
 
 const RegisterComponent = () => {
   return (
-    <div className='form__container'>
-      <form className='form__submit'>
-        <h4>Register Form</h4>
-        <div className='form__input-group'>
+    <div className='card'>
+      <form className='card__form'>
+        <h4 className='card__form__title'>Register</h4>
+        <div className='card__form__group'>
           <label>Name:</label>
-          <input type='text' name='name' className='form__input'></input>
+          <input type='text' name='name' className='card__form__group__input'></input>
         </div>
-        <div className='form__input-group'>
+        <div className='card__form__group'>
           <label>Email address:</label>
-          <input type='email' name='email' className='form__input'></input>
+          <input type='email' name='email' className='card__form__group__input'></input>
         </div>
-        <div className='form__input-group'>
+        <div className='card__form__group'>
           <label>Password:</label>{' '}
-          <input type='password' name='password' className='form__input'></input>
+          <input type='password' name='password' className='card__form__group__input'></input>
         </div>
-        <div className='form__input-group'>
+        <div className='card__form__group'>
           <label>Confirm password:</label>
-          <input type='password' name='confirmPass' className='form__input'></input>
+          <input type='password' name='confirmPass' className='card__form__group__input'></input>
         </div>
-        <button className='form__btn' type='submit'>
+        <button className='card__form__btn' type='submit'>
           Register
         </button>
       </form>
