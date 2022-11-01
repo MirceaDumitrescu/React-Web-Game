@@ -100,7 +100,7 @@ const RegisterComponent = () => {
             <span role='alert'>The passwords do not match!</span>
           )}
         </div>
-        <button className='card__form__btn' type='submit'>
+        <button id='btn-submit' className='card__form__btn' type='submit'>
           Register
         </button>
       </form>
