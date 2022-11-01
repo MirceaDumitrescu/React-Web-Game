@@ -1,0 +1,97 @@
+// Font imports
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Island+Moments&family=MedievalSharp&family=Viaoda+Libre&display=swap');
+
+//////////////////////
+// colors           //
+/////////////////////
+// primary colors
+$p-black: hsl(0, 0%, 0%);
+$p-white: hsl(0, 0%, 100%);
+$p-green: hsl(147, 50%, 47%);
+$p-yellow: hsl(39, 100%, 50%);
+
+// accent
+$a-purple: hsl(248, 53%, 58%);
+$a-grey: hsl(211, 12%, 48%);
+
+// transparent
+$t-black: rgba(0, 0, 0, 0.5);
+$t-white: rgba(255, 255, 255, 0.3);
+
+//////////////////////
+// fonts            //
+/////////////////////
+
+$ff-menu: 'MedievalSharp', cursive;
+$ff-danger: 'Viaoda Libre', cursive;
+$ff-succes: 'Island Moments', cursive;
+$ff-text: 'Crimson Text', serif;
+
+//////////////////////
+// typography       //
+/////////////////////
+
+// font-sizes
+$fs-small: 14px;
+$fs-medium: 18px;
+$fs-large: 22px;
+
+//  font-weights
+$weight-900: 900;
+$weight-800: 800;
+$weight-700: 700;
+$weight-600: 600;
+$weight-500: 500;
+$weight-400: 400;
+$weightL-300: 300;
+$weight-200: 200;
+$weight-100: 100;
+
+//////////////////////
+// utility var.     //
+/////////////////////
+/// gap
+$gap-large: 2em;
+$gap-medium: 1em;
+$gap-small: 0.5em;
+//////////////////////
+/// border-radius
+$br-50: 50px;
+$br-40: 40px;
+$br-30: 30px;
+$br-20: 20px;
+$br-15: 15px;
+$br-10: 10px;
+//////////////////////
+/// border-style
+$b-0: none;
+$bs-1: solid 1px;
+$bs-2: solid 2px;
+$bs-3: solid 3px;
+//////////////////////
+/// margin
+$m-10: 10px;
+$m-20: 20px;
+$m-30: 30px;
+
+//////////////////////
+// utility classe   //
+/////////////////////
+
+// display : grid & flex
+
+@mixin grid($grid-template-columns, $justify-items, $align-items) {
+  display: grid;
+  grid-template-columns: $grid-template-columns;
+  justify-items: $justify-items;
+  align-items: $align-items;
+}
+
+@mixin flex($flex-direction, $align-items, $justify-content) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+// predefined margins
