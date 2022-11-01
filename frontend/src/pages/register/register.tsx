@@ -21,7 +21,7 @@ const RegisterComponent = () => {
           <label>Confirm password:</label>
           <input type='password' name='confirmPass' className='card__form__group__input'></input>
         </div>
-        <button className='card__form__btn' type='submit'>
+        <button id='btn-submit' className='card__form__btn' type='submit'>
           Register
         </button>
       </form>
