@@ -1,10 +1,11 @@
+// import { useEffect, useState } from 'react'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { v4 as uuidv4 } from 'uuid'
 import './register.scss'
 
 const RegisterComponent = () => {
-  const uuid = uuidv4
+  const uuid = uuidv4()
 
   const {
     register,
@@ -40,15 +41,16 @@ const RegisterComponent = () => {
     }
   }
 
+  const onSubmit = (data: any) => {
+    console.log(data)
+    const userData = { id: uuidv4(), ...data }
+    console.log(userData)
+    localStorage.setItem('users', JSON.stringify(userData))
+  }
+
   return (
     <div className='card'>
-      <form
-        className='card__form'
-        onSubmit={handleSubmit((data) => {
-          localStorage.setItem('users', JSON.stringify(data))
-          console.log(data)
-        })}
-      >
+      <form className='card__form' onSubmit={handleSubmit(onSubmit)}>
         <h4 className='card__form__title'>Register</h4>
         <div className='card__form__group'>
           <label htmlFor='name'>Name:</label>
