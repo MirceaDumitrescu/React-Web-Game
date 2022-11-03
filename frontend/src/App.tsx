@@ -2,13 +2,13 @@ import React from 'react'
 import './App.scss'
 import RegisterComponent from './pages/register/register'
 import LoginComponent from './pages/login/login'
-import FormGenerator from './pages/formGenerator/formGenerator'
+import FormGenerator from './pages/formGenerator/formGeneratorRegister'
 
 function App() {
   return (
     <div className='App'>
-      <RegisterComponent></RegisterComponent>
-      {/* <LoginComponent></LoginComponent> */}
+      {/* <RegisterComponent></RegisterComponent> */}
+      <LoginComponent></LoginComponent>
       {/* <FormGenerator></FormGenerator> */}
     </div>
   )

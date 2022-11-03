@@ -1,4 +1,4 @@
-const inputConfig = [
+const configs = [
   {
     label: 'Name',
     type: 'text',
@@ -41,4 +41,4 @@ const inputConfig = [
   },
 ]
 
-export default inputConfig
+export default configs
