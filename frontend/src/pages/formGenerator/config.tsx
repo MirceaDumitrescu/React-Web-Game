@@ -2,7 +2,7 @@ const inputConfig = [
   {
     label: 'Name',
     type: 'text',
-    name: 'name',
+    name: 'username',
     value: '',
     validation: {
       required: true,

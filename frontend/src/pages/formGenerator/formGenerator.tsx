@@ -1,6 +1,7 @@
 import inputConfigs from './config'
 import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import RegisterComponent from '../register/register'
 import '../register/register.scss'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -14,31 +15,31 @@ const FormGenerator = () => {
     watch,
   } = useForm()
 
-  const onSubmit = (data: any) => {
-    console.log(data)
-    const userData = { id: uuidv4(), ...data }
-    console.log(userData)
-    localStorage.setItem('users', JSON.stringify(userData))
-  }
+  const allFields = watch()
 
   return (
     <div className='card'>
-      <form className='card__form' onSubmit={handleSubmit(onSubmit)}>
-        <h4 className='card__form__title'>Register Form</h4>
-        {inputFields.map((config) => {
-          console.log(config)
-          return (
-            <div key={config.name} className='card__form__group'>
-              <label>{config.label}</label>
-              <input
-                type={config.type}
-                className='card__form__group__input'
-                {...register(config.name, { required: true, minLength: 8, maxLength: 20 })}
-              />
-              {errors[config.name] && <span role='alert'>This field is required!</span>}
-            </div>
-          )
+      <form
+        className='card__form'
+        onSubmit={handleSubmit(() => {
+          onSubmit(allFields)
         })}
+      >
+        <h4 className='card__form__title'>Register Form</h4>
+        {inputFields.map((config) => (
+          <div key={config.name} className='card__form__group'>
+            <label>{config.label}</label>
+            <input
+              type={config.type}
+              className='card__form__group__input'
+              {...register(config.name, config.validation)}
+            />
+            {errors[config.name] && <span role='alert'>This field is required!</span>}
+            {errors[config.name] && errors[config.name]?.type === 'minLength' && (
+              <span role='alert'>Password too smal!</span>
+            )}
+          </div>
+        ))}
         <button type='submit' className='card__form__btn'>
           Register
         </button>

@@ -16,8 +16,6 @@ const LoginComponent = () => {
 
   const watchEmail: string = watch('email')
   const watchPassword: string = watch('password')
-  console.log(watchEmail, watchPassword)
-
   const userData: any = JSON.parse(localStorage.getItem('users') || '{}')
 
   console.log(userData.email, userData.password)
