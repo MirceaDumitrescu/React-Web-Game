@@ -48,7 +48,11 @@ const LoginComponent = () => {
   //   }
   // }
 
-  return <FormGeneratorLogin configsLogin={configsLogin} onSubmit={onSubmit}></FormGeneratorLogin>
+  return (
+    <div className='card'>
+      <FormGeneratorLogin configsLogin={configsLogin} onSubmit={onSubmit}></FormGeneratorLogin>
+    </div>
+  )
 }
 
 export default LoginComponent

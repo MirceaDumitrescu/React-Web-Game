@@ -42,61 +42,9 @@ const RegisterComponent = () => {
   }
 
   return (
-    <FormGenerator onSubmit={onSubmit} inputConfigs={configs}></FormGenerator>
-    // <div className='card'>
-
-    //   <form className='card__form' onSubmit={handleSubmit(onSubmit)}>
-    //     <h4 className='card__form__title'>Register</h4>
-    //     <div className='card__form__group'>
-    //       <label htmlFor='name'>Name:</label>
-    //       <input
-    //         id='name'
-    //         type='text'
-    //         {...register('name', { required: true })}
-    //         className='card__form__group__input'
-    //       />
-    //       {errorsRender(errors.name)}
-    //     </div>
-    //     <div className='card__form__group'>
-    //       <label>Email address:</label>
-    //       <input
-    //         id='email'
-    //         type='email'
-    //         {...register('email', { required: true })}
-    //         className='card__form__group__input'
-    //       ></input>
-    //       {errorsRender(errors.email)}
-    //     </div>
-    //     <div className='card__form__group'>
-    //       <label>Password:</label>
-    //       <input
-    //         id='password'
-    //         type='password'
-    //         {...register('password', { required: true, minLength: 8, maxLength: 20 })}
-    //         className='card__form__group__input'
-    //       ></input>
-    //       {errorsRender(errors.password)}
-    //     </div>
-    //     <div className='card__form__group'>
-    //       <label htmlFor='confirmPass'>Confirm password:</label>
-    //       <input
-    //         id='confirmPass'
-    //         type='password'
-    //         {...register('confirmPass', {
-    //           required: true,
-    //           minLength: 8,
-    //           maxLength: 20,
-    //           validate: passValidation,
-    //         })}
-    //         className='card__form__group__input'
-    //       ></input>
-    //       {errorsRender(errors.confirmPass)}
-    //     </div>
-    //     <button id='btn-submit' className='card__form__btn' type='submit'>
-    //       Register
-    //     </button>
-    //   </form>
-    // </div>
+    <div className='card'>
+      <FormGenerator onSubmit={onSubmit} inputConfigs={configs}></FormGenerator>
+    </div>
   )
 }
 
