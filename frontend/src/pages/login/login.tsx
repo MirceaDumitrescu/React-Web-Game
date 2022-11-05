@@ -4,11 +4,10 @@ import inputConfigs from './config_login'
 
 const LoginComponent = () => {
   const onSubmit = (data: any) => {
-    const userData: any = localStorage.getItem('users')
-    const userDataParsed: any = JSON.parse(userData)
-    if (data.email != userDataParsed.email) {
+    const userData = JSON.parse(localStorage.getItem('user') || '{}')
+    if (data.email != userData.email) {
       return alert('Account do not exist! Please register.')
-    } else if (data.password != userDataParsed.password && data.email === userDataParsed.email) {
+    } else if (data.password != userData.password && data.email === userData.email) {
       return alert('Incorect password!')
     } else {
       return alert('You are logged in')
