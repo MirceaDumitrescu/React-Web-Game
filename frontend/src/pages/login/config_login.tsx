@@ -1,39 +1,30 @@
-const configLogin = [
+const inputConfigs = [
   {
     label: 'Email adress',
     type: 'email',
     name: 'email',
-    value: '',
+    className: 'card__form__group__input',
     validation: {
       required: true,
-      validate: function (inputMail: string, storedMail: string) {
-        if (inputMail != storedMail) {
-          return 'Account do not exist!'
-        }
-      },
     },
   },
   {
     label: 'Password',
     type: 'password',
     name: 'password',
-    value: '',
+    className: 'card__form__group__input',
     validation: {
       required: true,
-      validate: function (
-        inputMail: string,
-        storedMail: string,
-        inputPass: string,
-        storedPass: string,
-      ) {
-        if (inputPass != storedPass && inputMail != storedMail) {
-          return 'Incorrect password '
-        } else {
-          return 'You are logged in!'
-        }
-      },
     },
+  },
+  {
+    label: '',
+    type: 'submit',
+    name: 'button',
+    className: 'card__form__btn',
+    value: 'Login',
+    id: 'submit_btn',
   },
 ]
 
-export default configLogin
+export default inputConfigs

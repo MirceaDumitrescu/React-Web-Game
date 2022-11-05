@@ -24,6 +24,7 @@
       font-size: $fs-large;
       font-family: $ff-menu;
       letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     &__group {
@@ -50,6 +51,7 @@
       font-weight: $weight-600;
       border: $b-0;
       border-radius: $br-10;
+      text-transform: uppercase;
     }
   }
 }

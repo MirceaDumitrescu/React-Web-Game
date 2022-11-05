@@ -1,9 +1,12 @@
 import { useForm } from 'react-hook-form'
 import '../register/register.scss'
+import '../login/login.scss'
+import { config } from 'process'
 
 interface FormProps {
   onSubmit: (data: any) => void
-  inputConfigs: any
+  inputConfigs?: any
+  configsLogin?: any
 }
 
 const FormGenerator = (props: FormProps) => {
@@ -18,13 +21,13 @@ const FormGenerator = (props: FormProps) => {
 
   return (
     <form className='card__form' onSubmit={handleSubmit(() => props.onSubmit(fieldsWatched))}>
-      <h4 className='card__form__title'>Register Form</h4>
       {props.inputConfigs.map((config: any) => (
         <div key={config.name} className='card__form__group'>
           <label>{config.label}</label>
           <input
             type={config.type}
-            className='card__form__group__input'
+            className={config.className}
+            value={config.value}
             {...register(config.name, config.validation)}
           />
           {errors[config.name]?.type === 'required' && (
@@ -38,9 +41,6 @@ const FormGenerator = (props: FormProps) => {
           )}
         </div>
       ))}
-      <button type='submit' className='card__form__btn'>
-        Register
-      </button>
     </form>
   )
 }
