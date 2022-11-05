@@ -1,4 +1,3 @@
-import React from 'react'
 import './App.scss'
 import RegisterComponent from './pages/register/register'
 import LoginComponent from './pages/login/login'
