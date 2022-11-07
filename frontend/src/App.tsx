@@ -1,12 +1,12 @@
-import React from 'react'
 import './App.scss'
-import router from './routes'
-import { RouterProvider } from 'react-router-dom'
+import RegisterComponent from './pages/register/register'
+import LoginComponent from './pages/login/login'
 
 function App() {
   return (
     <div className='App'>
-      <RouterProvider router={router}></RouterProvider>
+      <RegisterComponent></RegisterComponent>
+      <LoginComponent></LoginComponent>
     </div>
   )
 }
