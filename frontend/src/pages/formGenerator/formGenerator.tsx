@@ -1,7 +1,6 @@
 import { useForm } from 'react-hook-form'
 import '../register/register.scss'
 import '../login/login.scss'
-import { config } from 'process'
 
 interface FormProps {
   onSubmit: (data: any) => void
