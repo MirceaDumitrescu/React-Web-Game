@@ -1,6 +1,7 @@
 import './login.scss'
 import FormGenerator from '../formGenerator/formGenerator'
 import inputConfigs from './config_login'
+import { Link } from 'react-router-dom'
 
 const LoginComponent = () => {
   const onSubmit = (data: any) => {
@@ -18,6 +19,9 @@ const LoginComponent = () => {
     <div className='card'>
       <h4 className='card__form__title'>Login Form</h4>
       <FormGenerator inputConfigs={inputConfigs} onSubmit={onSubmit}></FormGenerator>
+      <h4>
+        <Link to='/register'> Missing an account? Go to Register!</Link>
+      </h4>
     </div>
   )
 }
