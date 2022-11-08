@@ -2,10 +2,12 @@ import configs from './config_register'
 import { v4 as uuidv4 } from 'uuid'
 import FormGenerator from '../formGenerator/formGenerator'
 import './register.scss'
-import { Link } from 'react-router-dom'
+import { Link, redirect, useNavigate } from 'react-router-dom'
+import { successToast, errorToast } from '../../components/toasts'
 
 const RegisterComponent = () => {
   const uuid = uuidv4()
+  const navigate = useNavigate()
 
   interface FormData {
     username: string
@@ -18,9 +20,10 @@ const RegisterComponent = () => {
     const userData = { id: uuid, ...data }
     if (data.password === data.confirmPass) {
       localStorage.setItem('users', JSON.stringify(userData))
-      alert('Account was registered!')
+      successToast('Account was registered!')
+      return navigate('/login')
     } else {
-      alert('Passwords do not match!')
+      errorToast('Passwords do not match!')
     }
   }
 
