@@ -12,17 +12,22 @@ import { Secret } from 'jsonwebtoken';
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 
+const authRoutes = require('../routes/auth.routes');
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.json());
+
+app.use('/api/auth', authRoutes);
+
 mongoose
   .connect(uri as Secret, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    app.use(bodyParser.json());
-    app.use(cors());
-  })
   .catch((err: any) => {
     console.log(err);
   });
 
 export const db = mongoose.connection;
+
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {

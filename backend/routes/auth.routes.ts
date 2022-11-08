@@ -59,6 +59,7 @@ router.post("/register", async (req: any, res: any) => {
 });
 
 router.post("/login", async (req:any , res:any) => {
+	console.log(req.body);
 	const { email, password } = req.body;
 	const { error } = loginValidation(req.body);
 	if (loginValidation(req.body).error) {
