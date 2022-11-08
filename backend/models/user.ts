@@ -3,7 +3,7 @@ import { permissions } from '../utils/permissions';
 import { v4 as uuidv4 } from 'uuid';
 
 const userSchema = new mongoose.Schema({
-    _id: {
+    uuid: {
         type: String,
         default: uuidv4
     },
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
         minlength: 6
     },
     permissions: {
-        type: String,
+        type: Object,
         default: permissions.user
     },
     date: {
