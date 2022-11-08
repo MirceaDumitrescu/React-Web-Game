@@ -2,19 +2,19 @@ import './login.scss'
 import FormGenerator from '../formGenerator/formGenerator'
 import inputConfigs from './config_login'
 import { Link } from 'react-router-dom'
+import { successToast, errorToast, warningToast } from '../../components/toasts'
 
 const LoginComponent = () => {
   const onSubmit = (data: any) => {
-    const userData = JSON.parse(localStorage.getItem('user') || '{}')
-    if (data.email != userData.email) {
-      return alert('Account do not exist! Please register.')
-    } else if (data.password != userData.password && data.email === userData.email) {
-      return alert('Incorect password!')
+    const userData = JSON.parse(localStorage.getItem('users') || '{}')
+    if (data.email !== userData.email) {
+      errorToast('Account does not exist!')
+    } else if (data.password != userData.password) {
+      warningToast('Incorect password!')
     } else {
-      return alert('You are logged in')
+      successToast('You are logged in!')
     }
   }
-
   return (
     <div className='card'>
       <h4 className='card__form__title'>Login Form</h4>
