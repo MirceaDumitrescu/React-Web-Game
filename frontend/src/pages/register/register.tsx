@@ -2,7 +2,7 @@ import configs from './config_register'
 import { v4 as uuidv4 } from 'uuid'
 import FormGenerator from '../formGenerator/formGenerator'
 import './register.scss'
-import { Link, redirect, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { successToast, errorToast } from '../../components/toasts'
 
 const RegisterComponent = () => {
