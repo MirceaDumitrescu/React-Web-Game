@@ -14,9 +14,8 @@
   &__form {
     @include flex(column, center, center);
     gap: $gap-medium;
-    margin: $m-30;
+    margin: $m-10;
     background-color: $t-black;
-    width: 40%;
     border-radius: $br-20;
     padding: 20px;
 
@@ -30,19 +29,35 @@
     &__group {
       @include flex(column, center, center);
       gap: $gap-small;
+      margin-bottom: 0.5rem;
+      padding: 10px;
 
       &__input {
         text-align: center;
-        width: 200px;
+        padding: 10px 30px;
         height: 30px;
-        border: $bs-3 $p-green;
+        border: $bs-1 $p-green;
         border-radius: $br-10;
         font-family: $ff-menu;
         font-weight: $weight-600;
+        background-color: black;
+        color: white;
       }
     }
 
     &__btn {
+      cursor: pointer;
+      background-color: $p-green;
+      font-family: $ff-menu;
+      padding: 10px 30px;
+      font-size: $fs-medium;
+      font-weight: $weight-600;
+      border: $b-0;
+      border-radius: $br-10;
+      text-transform: uppercase;
+    }
+
+    &__redirect {
       cursor: pointer;
       background-color: $p-green;
       font-family: $ff-menu;
@@ -52,6 +67,11 @@
       border: $b-0;
       border-radius: $br-10;
       text-transform: uppercase;
+
+      &__link {
+        text-decoration: none;
+        color: white;
+      }
     }
   }
 }

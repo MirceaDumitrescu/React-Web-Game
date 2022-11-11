@@ -30,9 +30,11 @@ const LoginComponent = () => {
     <div className='card'>
       <h4 className='card__form__title'>Login Form</h4>
       <FormGenerator inputConfigs={inputConfigs} onSubmit={onSubmit}></FormGenerator>
-      <h4>
-        <Link to='/register'>Missing an account? Register here!</Link>
-      </h4>
+      <button className='card__form__redirect'>
+        <Link className='card__form__redirect__link' to='/register'>
+          Missing an account? Register here!
+        </Link>
+      </button>
     </div>
   )
 }
