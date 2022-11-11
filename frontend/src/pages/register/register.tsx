@@ -1,12 +1,11 @@
 import configs from './config_register'
-import { v4 as uuidv4 } from 'uuid'
 import FormGenerator from '../formGenerator/formGenerator'
 import './register.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import { successToast, errorToast } from '../../components/toasts'
+import { registerUser } from '../../api/auth.register'
 
 const RegisterComponent = () => {
-  const uuid = uuidv4()
   const navigate = useNavigate()
 
   interface FormData {
@@ -16,10 +15,20 @@ const RegisterComponent = () => {
     confirmPass: string
   }
 
+  interface UserData {
+    username: string
+    email: string
+    password: string
+  }
+
   const onSubmit = (data: FormData) => {
-    const userData = { id: uuid, ...data }
+    const userData: UserData = {
+      username: data.username,
+      email: data.email,
+      password: data.password,
+    }
     if (data.password === data.confirmPass) {
-      localStorage.setItem('users', JSON.stringify(userData))
+      registerUser(userData)
       successToast('Account was registered!')
       return navigate('/login')
     } else {
