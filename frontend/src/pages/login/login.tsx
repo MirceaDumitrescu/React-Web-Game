@@ -5,27 +5,32 @@ import { Link, useNavigate } from 'react-router-dom'
 import { successToast, errorToast, warningToast } from '../../components/toasts'
 import { useDispatch } from 'react-redux'
 import { setLogin } from '../../features/reducers/loginStatusReducer'
-
-// onClick={() => {
-//   dispatch(login({ name: 'adrian', email: 'adrian@mail.com' }))
-// }}
+import { logUser } from '../../api/api.login'
 
 const LoginComponent = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const onSubmit = (data: any) => {
-    const userData = JSON.parse(localStorage.getItem('users') || '{}')
-    if (data.email !== userData.email) {
-      errorToast('Account does not exist!')
-    } else if (data.password != userData.password) {
-      warningToast('Incorect password!')
-    } else {
-      dispatch(setLogin({ username: userData.username, email: userData.email }))
-      successToast('Welcome!')
-      return navigate('/profile')
+  interface FormData {
+    email: string
+    password: string
+  }
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await logUser(data)
+      if (response.error) {
+        errorToast(response.error)
+      } else {
+        dispatch(setLogin({ email: data.email }))
+        successToast('Welcome!')
+        return navigate('/profile')
+      }
+    } catch (error: any) {
+      console.error(error)
     }
   }
+
   return (
     <div className='card'>
       <h4 className='card__form__title'>Login Form</h4>
