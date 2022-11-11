@@ -51,28 +51,32 @@ $weight-100: 100;
 // utility var.     //
 /////////////////////
 /// gap
-$gap-large: 2em;
-$gap-medium: 1em;
-$gap-small: 0.5em;
+$gap-large: 32px;
+$gap-medium: 16px;
+$gap-small: 8px;
 //////////////////////
 /// border-radius
-$br-50: 50px;
-$br-40: 40px;
-$br-30: 30px;
-$br-20: 20px;
-$br-15: 15px;
-$br-10: 10px;
+$border-radius-50: 50px;
+$border-radius-40: 40px;
+$border-radius-30: 30px;
+$border-radius-20: 20px;
+$border-radius-15: 15px;
+$border-radius-10: 10px;
 //////////////////////
 /// border-style
-$b-0: none;
-$bs-1: solid 1px;
-$bs-2: solid 2px;
-$bs-3: solid 3px;
+$border-0: none;
+$border-1: solid 1px;
+$border-2: solid 2px;
+$border-3: solid 3px;
 //////////////////////
 /// margin
-$m-10: 10px;
-$m-20: 20px;
-$m-30: 30px;
+$spacing-small: 10px;
+$spacing-medium: 20px;
+$spacing-large: 30px;
+//////////////////////
+//  text transform
+$upper: uppercase;
+$lower: lowercase;
 
 //////////////////////
 // utility classe   //

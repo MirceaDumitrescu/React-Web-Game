@@ -19,9 +19,9 @@ const FormGenerator = (props: FormProps) => {
   const fieldsWatched = watch()
 
   return (
-    <form className='card__form' onSubmit={handleSubmit(() => props.onSubmit(fieldsWatched))}>
+    <form className='form' onSubmit={handleSubmit(() => props.onSubmit(fieldsWatched))}>
       {props.inputConfigs.map((config: any) => (
-        <div key={config.name} className='card__form__group'>
+        <div key={config.name} className='form__group'>
           <label>{config.label}</label>
           <input
             type={config.type}

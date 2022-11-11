@@ -29,10 +29,10 @@ const RegisterComponent = () => {
 
   return (
     <div className='card'>
-      <h4 className='card__form__title'>Register Form</h4>
+      <h4 className='form__title'>Register Form</h4>
       <FormGenerator onSubmit={onSubmit} inputConfigs={configs}></FormGenerator>
-      <button className='card__form__redirect'>
-        <Link className='card__form__redirect__link' to='/login'>
+      <button className='form__redirect'>
+        <Link className='form__redirect__link' to='/login'>
           Already have an account? Login here!
         </Link>
       </button>

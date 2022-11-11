@@ -1,7 +1,5 @@
 @import '../../variables.scss';
 
-@import '../../variables.scss';
-
 .card {
   @include flex(column, center, center);
   text-align: center;
@@ -13,35 +11,36 @@
   background-size: cover;
   height: 100vh;
 
-  &__form {
+  .form {
     @include flex(column, center, center);
     gap: $gap-medium;
-    margin: $m-10;
+    margin: $spacing-small;
     background-color: $t-black;
-    border-radius: $br-20;
-    padding: 20px;
+    border-radius: $border-radius-20;
+    padding: $spacing-medium;
 
     &__title {
       font-size: $fs-large;
       font-family: $ff-menu;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      letter-spacing: $spacing-small;
+      text-transform: $upper;
     }
 
     &__group {
       @include flex(column, center, center);
       gap: $gap-small;
-      margin-bottom: 0.5rem;
-      padding: 10px;
+      margin-bottom: $spacing-small;
+      padding: $spacing-small;
 
       &__input {
         text-align: center;
-        border: $bs-1 $p-green;
-        border-radius: $br-10;
+        height: $spacing-large;
+        border: $border-1 $p-green;
+        border-radius: $border-radius-10;
         font-family: $ff-menu;
         font-weight: $weight-600;
-        background-color: black;
-        color: white;
+        background-color: $p-black;
+        color: $p-white;
       }
     }
 
@@ -49,28 +48,30 @@
       cursor: pointer;
       background-color: $p-green;
       font-family: $ff-menu;
-      padding: 10px;
+      padding: $spacing-small;
       font-size: $fs-medium;
       font-weight: $weight-600;
-      border: $b-0;
-      border-radius: $br-10;
-      text-transform: uppercase;
+      border: $border-0;
+      border-radius: $border-radius-10;
+      text-transform: $upper;
     }
 
     &__redirect {
       cursor: pointer;
       background-color: $p-green;
       font-family: $ff-menu;
-      padding: 10px;
+      padding: $spacing-small;
       font-size: $fs-medium;
       font-weight: $weight-600;
-      border: $b-0;
-      border-radius: $br-10;
-      text-transform: uppercase;
+      border: $border-0;
+      border-radius: $border-radius-10;
+      text-transform: $upper;
+      width: 193px;
 
       &__link {
         text-decoration: none;
-        color: white;
+        color: $p-white;
+        font-size: $fs-small;
       }
     }
   }
