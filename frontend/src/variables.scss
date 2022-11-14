@@ -2,30 +2,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Island+Moments&family=MedievalSharp&family=Viaoda+Libre&display=swap');
 
 //////////////////////
+// media           //
+/////////////////////
+$breakpoint-phone: 500px;
+$breakpoint-tablet: 810px;
+$breakpoint-desktop: 1200px;
+
+//////////////////////
 // colors           //
 /////////////////////
 // primary colors
-$p-black: hsl(0, 0%, 0%);
-$p-white: hsl(0, 0%, 100%);
-$p-green: hsl(147, 50%, 47%);
-$p-yellow: hsl(39, 100%, 50%);
+$primary-black: hsl(0, 0%, 0%);
+$primary-white: hsl(0, 0%, 100%);
+$primary-green: hsl(147, 50%, 47%);
+$primary-yellow: hsl(39, 100%, 50%);
 
 // accent
-$a-purple: hsl(248, 53%, 58%);
-$a-grey: hsl(211, 12%, 48%);
+$accent-purple: hsl(248, 53%, 58%);
+$accent-grey: hsl(211, 12%, 48%);
 
 // transparent
-$t-black: rgba(0, 0, 0, 0.5);
-$t-white: rgba(255, 255, 255, 0.3);
+$transparent-black: rgba(0, 0, 0, 0.5);
+$transparent-white: rgba(255, 255, 255, 0.3);
 
 //////////////////////
 // fonts            //
 /////////////////////
 
-$ff-menu: 'MedievalSharp', cursive;
-$ff-danger: 'Viaoda Libre', cursive;
-$ff-succes: 'Island Moments', cursive;
-$ff-text: 'Crimson Text', serif;
+$font-fam-primary: 'MedievalSharp', cursive;
+$font-fam-secondary: 'Crimson Text', serif;
+$font-fam-danger: 'Viaoda Libre', cursive;
+$font-fam-succes: 'Island Moments', cursive;
 
 //////////////////////
 // typography       //
@@ -98,4 +105,8 @@ $lower: lowercase;
   justify-content: $justify-content;
 }
 
-// predefined margins
+@mixin media($width, $breakpoint-tablet) {
+  @media screen and (max-width: $breakpoint-tablet) {
+    width: $width;
+  }
+}

@@ -3,9 +3,9 @@
 .card {
   @include flex(column, center, center);
   text-align: center;
-  font-family: $ff-menu;
+  font-family: $font-fam-primary;
   font-weight: $weight-600;
-  color: $p-white;
+  color: $primary-white;
   background: url('../../assets/menu-background.gif');
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,15 +15,17 @@
     @include flex(column, center, center);
     gap: $gap-medium;
     margin: $spacing-small;
-    background-color: $t-black;
+    background-color: $transparent-black;
     border-radius: $border-radius-20;
     padding: $spacing-medium;
+    width: 500px;
+    @include media(193px, $breakpoint-phone);
 
     &__title {
       font-size: $fs-large;
-      font-family: $ff-menu;
+      font-family: $font-fam-primary;
       letter-spacing: $spacing-small;
-      text-transform: $upper;
+      text-transform: uppercase;
     }
 
     &__group {
@@ -31,46 +33,53 @@
       gap: $gap-small;
       margin-bottom: $spacing-small;
       padding: $spacing-small;
+      width: 80%;
+      @include media(150px, $breakpoint-phone);
 
       &__input {
         text-align: center;
         height: $spacing-large;
-        border: $border-1 $p-green;
+        border: $border-1 $primary-green;
         border-radius: $border-radius-10;
-        font-family: $ff-menu;
+        font-family: $font-fam-primary;
         font-weight: $weight-600;
-        background-color: $p-black;
-        color: $p-white;
+        background-color: $primary-black;
+        color: $primary-white;
+        width: 70%;
+        @include media(150px, $breakpoint-phone);
       }
     }
 
     &__btn {
       cursor: pointer;
-      background-color: $p-green;
-      font-family: $ff-menu;
+      background-color: $primary-green;
+      font-family: $font-fam-primary;
       padding: $spacing-small;
       font-size: $fs-medium;
       font-weight: $weight-600;
       border: $border-0;
       border-radius: $border-radius-10;
-      text-transform: $upper;
+      text-transform: uppercase;
+      width: 70%;
+      @include media(150px, $breakpoint-phone);
     }
 
     &__redirect {
       cursor: pointer;
-      background-color: $p-green;
-      font-family: $ff-menu;
+      background-color: $primary-green;
+      font-family: $font-fam-primary;
       padding: $spacing-small;
       font-size: $fs-medium;
       font-weight: $weight-600;
       border: $border-0;
       border-radius: $border-radius-10;
-      text-transform: $upper;
-      width: 193px;
+      text-transform: uppercase;
+      width: 500px;
+      @include media(193px, $breakpoint-phone);
 
       &__link {
         text-decoration: none;
-        color: $p-white;
+        color: $primary-white;
         font-size: $fs-small;
       }
     }
