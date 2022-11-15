@@ -2,30 +2,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Island+Moments&family=MedievalSharp&family=Viaoda+Libre&display=swap');
 
 //////////////////////
+// media           //
+/////////////////////
+$breakpoint-phone: 500px;
+$breakpoint-tablet: 810px;
+$breakpoint-desktop: 1200px;
+
+//////////////////////
 // colors           //
 /////////////////////
 // primary colors
-$p-black: hsl(0, 0%, 0%);
-$p-white: hsl(0, 0%, 100%);
-$p-green: hsl(147, 50%, 47%);
-$p-yellow: hsl(39, 100%, 50%);
+$primary-black: hsl(0, 0%, 0%);
+$primary-white: hsl(0, 0%, 100%);
+$primary-green: hsl(147, 50%, 47%);
+$primary-yellow: hsl(39, 100%, 50%);
 
 // accent
-$a-purple: hsl(248, 53%, 58%);
-$a-grey: hsl(211, 12%, 48%);
+$accent-purple: hsl(248, 53%, 58%);
+$accent-grey: hsl(211, 12%, 48%);
 
 // transparent
-$t-black: rgba(0, 0, 0, 0.5);
-$t-white: rgba(255, 255, 255, 0.3);
+$transparent-black: rgba(0, 0, 0, 0.5);
+$transparent-white: rgba(255, 255, 255, 0.3);
 
 //////////////////////
 // fonts            //
 /////////////////////
 
-$ff-menu: 'MedievalSharp', cursive;
-$ff-danger: 'Viaoda Libre', cursive;
-$ff-succes: 'Island Moments', cursive;
-$ff-text: 'Crimson Text', serif;
+$font-fam-primary: 'MedievalSharp', cursive;
+$font-fam-secondary: 'Crimson Text', serif;
+$font-fam-danger: 'Viaoda Libre', cursive;
+$font-fam-succes: 'Island Moments', cursive;
 
 //////////////////////
 // typography       //
@@ -51,28 +58,32 @@ $weight-100: 100;
 // utility var.     //
 /////////////////////
 /// gap
-$gap-large: 2em;
-$gap-medium: 1em;
-$gap-small: 0.5em;
+$gap-large: 32px;
+$gap-medium: 16px;
+$gap-small: 8px;
 //////////////////////
 /// border-radius
-$br-50: 50px;
-$br-40: 40px;
-$br-30: 30px;
-$br-20: 20px;
-$br-15: 15px;
-$br-10: 10px;
+$border-radius-50: 50px;
+$border-radius-40: 40px;
+$border-radius-30: 30px;
+$border-radius-20: 20px;
+$border-radius-15: 15px;
+$border-radius-10: 10px;
 //////////////////////
 /// border-style
-$b-0: none;
-$bs-1: solid 1px;
-$bs-2: solid 2px;
-$bs-3: solid 3px;
+$border-0: none;
+$border-1: solid 1px;
+$border-2: solid 2px;
+$border-3: solid 3px;
 //////////////////////
 /// margin
-$m-10: 10px;
-$m-20: 20px;
-$m-30: 30px;
+$spacing-small: 10px;
+$spacing-medium: 20px;
+$spacing-large: 30px;
+//////////////////////
+//  text transform
+$upper: uppercase;
+$lower: lowercase;
 
 //////////////////////
 // utility classe   //
@@ -94,4 +105,8 @@ $m-30: 30px;
   justify-content: $justify-content;
 }
 
-// predefined margins
+@mixin media($width, $breakpoint-tablet) {
+  @media screen and (max-width: $breakpoint-tablet) {
+    width: $width;
+  }
+}
