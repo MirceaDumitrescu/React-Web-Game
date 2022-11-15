@@ -1,30 +1,48 @@
+import configs from './config_register'
+import FormGenerator from '../formGenerator/formGenerator'
 import './register.scss'
+import { Link, useNavigate } from 'react-router-dom'
+import { successToast, errorToast } from '../../components/toasts'
+import { registerUser } from '../../api/auth.register'
 
 const RegisterComponent = () => {
+  const navigate = useNavigate()
+
+  interface FormData {
+    username: string
+    email: string
+    password: string
+    confirmPass: string
+  }
+
+  interface UserData {
+    username: string
+    email: string
+    password: string
+  }
+
+  const onSubmit = (data: FormData) => {
+    const userData: UserData = {
+      username: data.username,
+      email: data.email,
+      password: data.password,
+    }
+    if (data.password === data.confirmPass) {
+      registerUser(userData)
+      successToast('Account was registered!')
+      return navigate('/login')
+    } else {
+      errorToast('Passwords do not match!')
+    }
+  }
+
   return (
     <div className='card'>
-      <form className='card__form'>
-        <h4 className='card__form__title'>Register</h4>
-        <div className='card__form__group'>
-          <label>Name:</label>
-          <input type='text' name='name' className='card__form__group__input'></input>
-        </div>
-        <div className='card__form__group'>
-          <label>Email address:</label>
-          <input type='email' name='email' className='card__form__group__input'></input>
-        </div>
-        <div className='card__form__group'>
-          <label>Password:</label>{' '}
-          <input type='password' name='password' className='card__form__group__input'></input>
-        </div>
-        <div className='card__form__group'>
-          <label>Confirm password:</label>
-          <input type='password' name='confirmPass' className='card__form__group__input'></input>
-        </div>
-        <button className='card__form__btn' type='submit'>
-          Register
-        </button>
-      </form>
+      <h4 className='card__form__title'>Register Form</h4>
+      <FormGenerator onSubmit={onSubmit} inputConfigs={configs}></FormGenerator>
+      <h4>
+        <Link to='/login'>Already have an account? Login here!</Link>
+      </h4>
     </div>
   )
 }

@@ -1,22 +1,43 @@
 import './login.scss'
+import FormGenerator from '../formGenerator/formGenerator'
+import inputConfigs from './config_login'
+import { Link, useNavigate } from 'react-router-dom'
+import { successToast, errorToast, warningToast } from '../../components/toasts'
+import { useDispatch } from 'react-redux'
+import { setLogin } from '../../features/reducers/loginStatusReducer'
+import { logUser } from '../../api/api.login'
 
 const LoginComponent = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  interface FormData {
+    email: string
+    password: string
+  }
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await logUser(data)
+      if (response.error) {
+        errorToast(response.error)
+      } else {
+        dispatch(setLogin({ email: data.email }))
+        successToast('Welcome!')
+        return navigate('/profile')
+      }
+    } catch (error: any) {
+      console.error(error)
+    }
+  }
+
   return (
     <div className='card'>
-      <form className='card__form'>
-        <h4 className='card__form__title'>Login</h4>
-        <div className='card__form__group'>
-          <label>Email Adress:</label>
-          <input type='email' name='email' className='card__form__group__input'></input>
-        </div>
-        <div className='card__form__group'>
-          <label>Password</label>
-          <input type='password' name='password' className='card__form__group__input'></input>
-        </div>
-        <button className='card__form__btn' type='submit'>
-          Log In
-        </button>
-      </form>
+      <h4 className='card__form__title'>Login Form</h4>
+      <FormGenerator inputConfigs={inputConfigs} onSubmit={onSubmit}></FormGenerator>
+      <h4>
+        <Link to='/register'>Missing an account? Register here!</Link>
+      </h4>
     </div>
   )
 }
