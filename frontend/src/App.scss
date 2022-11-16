@@ -1,7 +1,14 @@
+@import './variables.scss';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-@import 'variables';
+.App {
+  background: url('./assets/menu-background.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}

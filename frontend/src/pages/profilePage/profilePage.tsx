@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import '../register/register.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLogout } from '../../features/reducers/loginStatusReducer'
-import { warningToast } from '../../components/toasts'
+import { warningToast } from '../../components/toasts/toasts'
 
 function ProfilePageComponent() {
   const navigate = useNavigate()
