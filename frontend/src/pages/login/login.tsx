@@ -22,7 +22,7 @@ const LoginComponent = () => {
       if (response.error) {
         errorToast(response.error)
       } else {
-        dispatch(setLogin({ email: data.email }))
+        dispatch(setLogin({ user: response.user }))
         successToast('Welcome!')
         return navigate('/profile')
       }
