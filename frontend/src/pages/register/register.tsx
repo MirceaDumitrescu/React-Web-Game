@@ -1,7 +1,9 @@
 import configs from './config_register'
+import configBtnRegister from './config_btn_register'
 import FormGenerator from '../formGenerator/formGenerator'
+import BtnGenerator from '../button/buttonGenerator'
 import './register.scss'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { successToast, errorToast } from '../../components/toasts'
 import { registerUser } from '../../api/auth.register'
 
@@ -40,11 +42,7 @@ const RegisterComponent = () => {
     <div className='card'>
       <h4 className='form__title'>Register Form</h4>
       <FormGenerator onSubmit={onSubmit} inputConfigs={configs}></FormGenerator>
-      <button className='form__redirect'>
-        <Link className='form__redirect__link' to='/login'>
-          Already have an account? Login here!
-        </Link>
-      </button>
+      <BtnGenerator btnConfigs={configBtnRegister}></BtnGenerator>
     </div>
   )
 }

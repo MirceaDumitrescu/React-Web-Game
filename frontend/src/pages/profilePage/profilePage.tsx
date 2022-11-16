@@ -19,12 +19,12 @@ function ProfilePageComponent() {
 
   return (
     <div className='card'>
-      <h1 className='card__form__title'>Profile Page</h1>
-      <div className='card__form'>
+      <h1 className='form__title'>Profile Page</h1>
+      <div className='form'>
         <p>Username: {user.username} </p>
         <p>Email: {user.email}</p>
       </div>
-      <button className='card__form__btn' onClick={logoutFunction}>
+      <button className='form__btn' onClick={logoutFunction}>
         Log Out
       </button>
     </div>

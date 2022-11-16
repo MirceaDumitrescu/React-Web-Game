@@ -1,16 +1,13 @@
 import { Link } from 'react-router-dom'
+import configBtnHome from './config_btn_home'
+import BtnGenerator from '../button/buttonGenerator'
 
 const Homepage = () => {
   return (
     <div className='card'>
-      <h3 className='form__title'>Hompage</h3>
+      <h3 className='form__title'>Homepage</h3>
       <div className='form__group'>
-        <button className='form__btn'>
-          <Link to='/login'>Login</Link>
-        </button>
-        <button className='form__btn'>
-          <Link to='/register'>Register</Link>
-        </button>
+        <BtnGenerator btnConfigs={configBtnHome}></BtnGenerator>
       </div>
     </div>
   )
