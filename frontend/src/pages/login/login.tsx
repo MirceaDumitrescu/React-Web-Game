@@ -36,8 +36,11 @@ const LoginComponent = () => {
   return (
     <div className='card'>
       <h4 className='form__title'>Login Form</h4>
-      <FormGenerator inputConfigs={inputConfigs} onSubmit={onSubmit}></FormGenerator>
-      <BtnGenerator btnConfigs={configBtnLogin}></BtnGenerator>
+      <FormGenerator
+        inputConfigs={inputConfigs}
+        onSubmit={onSubmit}
+        btnConfigs={configBtnLogin}
+      ></FormGenerator>
     </div>
   )
 }

@@ -1,7 +1,6 @@
 import configs from './config_register'
 import configBtnRegister from './config_btn_register'
 import FormGenerator from '../formGenerator/formGenerator'
-import BtnGenerator from '../button/buttonGenerator'
 import './register.scss'
 import { useNavigate } from 'react-router-dom'
 import { successToast, errorToast } from '../../components/toasts'
@@ -41,8 +40,11 @@ const RegisterComponent = () => {
   return (
     <div className='card'>
       <h4 className='form__title'>Register Form</h4>
-      <FormGenerator onSubmit={onSubmit} inputConfigs={configs}></FormGenerator>
-      <BtnGenerator btnConfigs={configBtnRegister}></BtnGenerator>
+      <FormGenerator
+        onSubmit={onSubmit}
+        inputConfigs={configs}
+        btnConfigs={configBtnRegister}
+      ></FormGenerator>
     </div>
   )
 }

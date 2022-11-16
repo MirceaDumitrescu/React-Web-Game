@@ -1,4 +1,4 @@
-import '../register/register.scss'
+import './buttonGenerator.scss'
 import { Link } from 'react-router-dom'
 
 interface BtnProps {
@@ -10,7 +10,7 @@ const BtnGenerator = (props: BtnProps) => {
   return (
     <div className='form__group'>
       {props.btnConfigs.map((config: any) => (
-        <button key={config.className} className={config.className}>
+        <button key={config.id} className={config.className}>
           <Link className={config.link.className} to={config.link.to}>
             {config.link.value}
           </Link>

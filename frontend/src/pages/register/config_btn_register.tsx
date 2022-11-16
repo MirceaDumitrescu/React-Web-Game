@@ -1,5 +1,8 @@
+import uuid from 'react-uuid'
+
 const configBtnRegister = [
   {
+    id: uuid(),
     containerClass: 'form_group',
     className: 'form__redirect',
     link: {

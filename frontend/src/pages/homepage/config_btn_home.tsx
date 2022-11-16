@@ -1,5 +1,8 @@
+import uuid from 'react-uuid'
+
 const configBtnHome = [
   {
+    id: uuid(),
     className: 'form__redirect',
     link: {
       className: 'form__redirect__link',
@@ -8,6 +11,7 @@ const configBtnHome = [
     },
   },
   {
+    id: uuid(),
     className: 'form__redirect',
     link: {
       className: 'form__redirect__link',
