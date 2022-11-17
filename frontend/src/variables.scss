@@ -105,3 +105,9 @@ $lower: lowercase;
   align-items: $align-items;
   justify-content: $justify-content;
 }
+
+@mixin media($width, $breakpoint-phone) {
+  @media (max-width: $breakpoint-phone) {
+    width: $width;
+  }
+}
