@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import configBtnHome from './config_btn_home'
-import BtnGenerator from '../button/buttonGenerator'
+import BtnGenerator from '../../components/button/buttonGenerator'
 
 const Homepage = () => {
   return (
