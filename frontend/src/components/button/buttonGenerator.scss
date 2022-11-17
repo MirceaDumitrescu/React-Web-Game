@@ -6,7 +6,6 @@
   margin-bottom: $spacing-small;
   padding: $spacing-small;
   width: 80%;
-  @include media(150px, $breakpoint-phone);
 
   &__redirect {
     cursor: pointer;
@@ -19,7 +18,6 @@
     border-radius: $border-radius-10;
     text-transform: uppercase;
     width: 500px;
-    @include media(193px, $breakpoint-phone);
 
     &__link {
       text-decoration: none;
