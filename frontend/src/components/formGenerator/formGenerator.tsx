@@ -29,15 +29,22 @@ const FormGenerator = (props: FormProps) => {
               className={config.className}
               value={config.value}
               {...register(config.name, config.validation)}
+              data-testid={config.name}
             />
             {errors[config.name]?.type === 'required' && (
-              <span role='alert'>This field is required!</span>
+              <span role='alert' data-testid='form-error'>
+                This field is required!
+              </span>
             )}
             {errors[config.name]?.type === 'minLength' && (
-              <span role='alert'>Password cannot be shorter than 8 characters!</span>
+              <span role='alert' data-testid='form-error'>
+                Password cannot be shorter than 8 characters!
+              </span>
             )}
             {errors[config.name]?.type === 'maxLength' && (
-              <span role='alert'>Password cannot be longer than 20 characters!</span>
+              <span role='alert' data-testid='form-error'>
+                Password cannot be longer than 20 characters!
+              </span>
             )}
           </div>
         ))}
