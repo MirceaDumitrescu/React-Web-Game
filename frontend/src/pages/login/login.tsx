@@ -1,7 +1,8 @@
 import './login.scss'
+import configBtnLogin from './config_btn_login'
 import FormGenerator from '../../components/formGenerator/formGenerator'
 import inputConfigs from './config_login'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { successToast, errorToast } from '../../components/toasts/toasts'
 import { useDispatch } from 'react-redux'
 import { setLogin } from '../../features/reducers/loginStatusReducer'
@@ -34,12 +35,11 @@ const LoginComponent = () => {
   return (
     <div className='form__login'>
       <h4 className='form__title'>Login Form</h4>
-      <FormGenerator inputConfigs={inputConfigs} onSubmit={onSubmit}></FormGenerator>
-      <button className='form__redirect'>
-        <Link className='form__redirect__link' to='/register'>
-          Missing an account? Register here!
-        </Link>
-      </button>
+      <FormGenerator
+        inputConfigs={inputConfigs}
+        onSubmit={onSubmit}
+        btnConfigs={configBtnLogin}
+      ></FormGenerator>
     </div>
   )
 }
