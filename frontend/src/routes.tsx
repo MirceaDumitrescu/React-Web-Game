@@ -3,11 +3,16 @@ import Homepage from './pages/homepage/homepage'
 import RegisterComponent from './pages/register/register'
 import LoginComponent from './pages/login/login'
 import ProfilePageComponent from './pages/profilePage/profilePage'
+import AuthGuard from './components/AuthGuard/AuthGuard'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Homepage />,
+    element: (
+      <AuthGuard>
+        <Homepage />
+      </AuthGuard>
+    ),
   },
   {
     path: '/login',
@@ -19,7 +24,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/profile',
-    element: <ProfilePageComponent />,
+    element: (
+      <AuthGuard>
+        <ProfilePageComponent />
+      </AuthGuard>
+    ),
   },
 ])
 

@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
-import '../register/register.scss'
+import './profilePage.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLogout } from '../../features/reducers/loginStatusReducer'
-import { warningToast } from '../../components/toasts'
+import { warningToast } from '../../components/toasts/toasts'
 
 function ProfilePageComponent() {
   const navigate = useNavigate()
@@ -18,13 +18,13 @@ function ProfilePageComponent() {
   }
 
   return (
-    <div className='card'>
-      <h1 className='form__title'>Profile Page</h1>
-      <div className='form'>
-        <p>Username: {user.username} </p>
-        <p>Email: {user.email}</p>
+    <div className='profile'>
+      <h1 className='profile__form__title'>Profile Page</h1>
+      <div className='profile__form'>
+        <p>Username: {user.user?.username} </p>
+        <p>Email: {user.user?.email}</p>
       </div>
-      <button className='form__btn' onClick={logoutFunction}>
+      <button className='profile__form__btn' onClick={logoutFunction}>
         Log Out
       </button>
     </div>

@@ -1,12 +1,10 @@
 import { useForm } from 'react-hook-form'
-import '../register/register.scss'
-import '../login/login.scss'
 import BtnGenerator from '../button/buttonGenerator'
+import './formGenerator.scss'
 
 interface FormProps {
   onSubmit: (data: any) => void
   inputConfigs?: any
-  configsLogin?: any
   btnConfigs?: any
 }
 

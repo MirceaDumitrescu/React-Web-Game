@@ -39,6 +39,7 @@ $font-fam-succes: 'Island Moments', cursive;
 /////////////////////
 
 // font-sizes
+$fs-xsmall: 12px;
 $fs-small: 14px;
 $fs-medium: 18px;
 $fs-large: 22px;
@@ -103,10 +104,4 @@ $lower: lowercase;
   flex-direction: $flex-direction;
   align-items: $align-items;
   justify-content: $justify-content;
-}
-
-@mixin media($width, $breakpoint-tablet) {
-  @media screen and (max-width: $breakpoint-tablet) {
-    width: $width;
-  }
 }
