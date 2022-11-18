@@ -33,7 +33,7 @@ const LoginComponent = () => {
   }
 
   return (
-    <div className='form__login'>
+    <div className='form__login' data-testid='login-form'>
       <h4 className='form__title'>Login Form</h4>
       <FormGenerator
         inputConfigs={inputConfigs}
