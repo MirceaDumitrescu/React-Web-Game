@@ -38,7 +38,7 @@ const RegisterComponent = () => {
   }
 
   return (
-    <div className='form__register'>
+    <div className='form__register' data-testid='register-form'>
       <h4 className='form__title'>Register Form</h4>
       <FormGenerator
         onSubmit={onSubmit}
