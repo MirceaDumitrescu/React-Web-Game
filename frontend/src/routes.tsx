@@ -4,6 +4,8 @@ import RegisterComponent from './pages/register/register'
 import LoginComponent from './pages/login/login'
 import ProfilePageComponent from './pages/profilePage/profilePage'
 import AuthGuard from './components/AuthGuard/AuthGuard'
+import CharacterCreation from './pages/character-creation/chracter-creation'
+import CharacterSelect from './pages/character-selection/character-selection'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,22 @@ const router = createBrowserRouter([
       <AuthGuard>
         <ProfilePageComponent />
       </AuthGuard>
+    ),
+  },
+  {
+    path: '/charCreate',
+    element: (
+      // <AuthGuard>
+      <CharacterCreation />
+      // </AuthGuard>
+    ),
+  },
+  {
+    path: '/charSelect',
+    element: (
+      // <AuthGuard>
+      <CharacterSelect />
+      // </AuthGuard>
     ),
   },
 ])
