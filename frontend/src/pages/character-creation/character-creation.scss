@@ -4,6 +4,9 @@
   @include grid(2fr 2fr, center, center);
   background-color: $transparent-black;
   width: 50%;
+  margin: auto;
+  padding: $spacing-medium;
+  font-family: $font-fam-primary;
 
   &__title {
     color: $primary-white;
@@ -11,6 +14,7 @@
 
   &__container {
     @include flex(column, center, center);
+    gap: $spacing-medium;
     &__title {
       color: $primary-white;
     }
@@ -24,6 +28,18 @@
   &__input {
     @include flex(column, center, center);
     color: $primary-white;
+
+    &__name {
+      text-align: center;
+      height: $spacing-large;
+      border: $border-1 $primary-green;
+      border-radius: $border-radius-10;
+      font-family: $font-fam-primary;
+      font-weight: $weight-600;
+      background-color: $primary-black;
+      color: $primary-white;
+      width: 250px;
+    }
   }
 
   &__btn {
@@ -33,9 +49,17 @@
     border: $border-0;
     border-radius: $border-radius-10;
     padding: $spacing-small;
+    font-family: $font-fam-primary;
   }
 
   &__preview {
     color: white;
+  }
+
+  .char__stats {
+    color: $primary-white;
+    &__cont {
+      @include grid(2fr 2fr, center, center);
+    }
   }
 }
