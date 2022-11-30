@@ -33,7 +33,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/charCreate',
+    path: '/char-create',
     element: (
       // <AuthGuard>
       <CharacterCreation />
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/charSelect',
+    path: '/char-select',
     element: (
       // <AuthGuard>
       <CharacterSelect />

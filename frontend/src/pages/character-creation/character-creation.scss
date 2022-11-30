@@ -3,10 +3,12 @@
 .char {
   @include grid(2fr 2fr, center, center);
   background-color: $transparent-black;
-  width: 50%;
+  width: 70%;
   margin: auto;
-  padding: $spacing-medium;
+  padding: $spacing-large;
   font-family: $font-fam-primary;
+  border-radius: $spacing-small;
+  gap: $spacing-large;
 
   &__title {
     color: $primary-white;
@@ -23,11 +25,17 @@
   &__config {
     @include flex(row, center, center);
     gap: $spacing-small;
+    background-color: $transparent-white;
+    padding: $spacing-medium;
+    border: $border-1 $primary-green;
+    border-radius: $spacing-small;
   }
 
   &__input {
-    @include flex(column, center, center);
-    color: $primary-white;
+    width: 100%;
+    padding: $spacing-small;
+    border: $border-2 $primary-green;
+    border-radius: $border-radius-10;
 
     &__name {
       text-align: center;
@@ -46,20 +54,66 @@
     cursor: pointer;
     background-color: $primary-green;
     color: $primary-black;
-    border: $border-0;
+    border: $border-2;
     border-radius: $border-radius-10;
-    padding: $spacing-small;
+    padding: $spacing-medium;
     font-family: $font-fam-primary;
+    font-size: 15px;
   }
 
   &__preview {
     color: white;
+    background-color: $transparent-white;
+    padding: $spacing-medium;
+    border-radius: $border-radius-10;
   }
 
   .char__stats {
-    color: $primary-white;
-    &__cont {
+    @include grid(2fr 2fr, center, center);
+    color: $primary-black;
+    gap: $spacing-small;
+    background-color: $transparent-white;
+    padding: $spacing-medium;
+    border: $border-1 $primary-green;
+    border-radius: $border-radius-10;
+
+    &__group {
+      @include flex(row, center, center);
+      gap: $spacing-small;
+      background-color: $primary-white;
+      padding: $spacing-small;
+      border: $border-2;
+      border-radius: $border-radius-10;
+
+      span {
+        color: $primary-green;
+        font-size: $spacing-medium;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .char {
+    @include flex(column, center, center);
+    gap: $spacing-medium;
+  }
+}
+
+@media (max-width: 770px) {
+  .char {
+    @include flex(column, center, center);
+    &__config {
       @include grid(2fr 2fr, center, center);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .char {
+    @include flex(column, center, center);
+    &__config {
+      @include flex(column, center, center);
     }
   }
 }
