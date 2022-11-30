@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="form__register"
+  >
+    <h4
+      class="form__title"
+    >
+      Register Form
+    </h4>
+    <div
+      class="form__group"
+    >
+      <form
+        class="form"
+      >
+        <div
+          class="form__group"
+        >
+          <label>
+            Name
+          </label>
+          <input
+            class="form__group__input"
+            data-testid="username"
+            name="username"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="form__group"
+        >
+          <label>
+            Email adress
+          </label>
+          <input
+            class="form__group__input"
+            data-testid="email"
+            name="email"
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="form__group"
+        >
+          <label>
+            Password
+          </label>
+          <input
+            class="form__group__input"
+            data-testid="password"
+            name="password"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          class="form__group"
+        >
+          <label>
+            Confirm Password
+          </label>
+          <input
+            class="form__group__input"
+            data-testid="confirmPass"
+            name="confirmPass"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          class="form__group"
+        >
+          <label />
+          <input
+            class="form__btn"
+            data-testid="button"
+            name="button"
+            type="submit"
+            value="Register"
+          />
+        </div>
+      </form>
+      <div
+        class="form__group"
+      >
+        <button
+          class="form__redirect"
+          data-testid="form-button"
+        >
+          <a
+            class="form__redirect__link"
+            href="/login"
+          >
+            Already have an account? Login here!
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
