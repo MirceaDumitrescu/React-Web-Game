@@ -37,8 +37,9 @@ const characterSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
-  user: {
-    type: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  userId: {
+    type: String,
+    required: true,
   },
 });
 
