@@ -3,6 +3,7 @@ import { permissions } from "../utils/permissions";
 import { v4 as uuidv4 } from "uuid";
 
 const userSchema = new mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
   uuid: {
     type: String,
     default: uuidv4,
@@ -28,14 +29,11 @@ const userSchema = new mongoose.Schema({
     type: Object,
     default: permissions.user,
   },
-  characters: {
-    type: Array,
-    default: [],
-  },
   date: {
     type: Date,
     default: Date.now,
   },
+  characters: [{ type: mongoose.Schema.Types.ObjectId, ref: "Character" }],
 });
 
 export const User = mongoose.model("User", userSchema);

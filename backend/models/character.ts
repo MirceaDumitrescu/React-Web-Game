@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { v4 as uuidv4 } from "uuid";
 
 const characterSchema = new mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
   uuid: {
     type: String,
     default: uuidv4,
@@ -35,6 +36,9 @@ const characterSchema = new mongoose.Schema({
   date: {
     type: Date,
     default: new Date(),
+  },
+  user: {
+    type: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   },
 });
 
