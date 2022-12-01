@@ -51,12 +51,14 @@
   }
 
   &__btn {
+    height: 60px;
+    width: 120px;
     cursor: pointer;
     background-color: $primary-green;
     color: $primary-black;
     border: $border-2;
     border-radius: $border-radius-10;
-    padding: $spacing-medium;
+    padding: $spacing-small;
     font-family: $font-fam-primary;
     font-size: 15px;
   }
@@ -84,6 +86,8 @@
       padding: $spacing-small;
       border: $border-2;
       border-radius: $border-radius-10;
+      height: 50px;
+      width: 100px;
 
       span {
         color: $primary-green;
