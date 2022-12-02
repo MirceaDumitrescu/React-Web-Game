@@ -41,6 +41,50 @@ const characterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  attack: {
+    type: Number,
+    default: 1,
+  },
+  defense: {
+    type: Number,
+    default: 1,
+  },
+  health: {
+    type: Number,
+    default: 1,
+  },
+  maxHealth: {
+    type: Number,
+    default: 1,
+  },
+  mana: {
+    type: Number,
+    default: 1,
+  },
+  maxMana: {
+    type: Number,
+    default: 1,
+  },
+  inventory: {
+    type: Array,
+    default: [],
+  },
+  equipped: {
+    type: Array,
+    default: [],
+  },
+  spells: {
+    type: Array,
+    default: [],
+  },
+  equippedSpells: {
+    type: Array,
+    default: [],
+  },
+  intelligence: {
+    type: Number,
+    default: 1,
+  },
 });
 
 export const Character = mongoose.model("Character", characterSchema);

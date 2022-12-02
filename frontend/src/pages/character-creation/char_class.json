@@ -1,30 +1,54 @@
 [
   {
     "class": "Mage",
-    "ATK": 25,
-    "INT": 48,
-    "DEF": 20,
-    "HP": 250
+    "attack": 10,
+    "defense": 5,
+    "health": 100,
+    "mana": 100,
+    "intelligence": 100,
+    "maxHealth": 100,
+    "maxMana": 100,
+    "equipped": [],
+    "inventory": [],
+    "spells": []
   },
   {
     "class": "Warrior",
-    "ATK": 35,
-    "INT": 20,
-    "DEF": 40,
-    "HP": 500
+    "attack": 10,
+    "defense": 5,
+    "health": 100,
+    "mana": 100,
+    "intelligence": 100,
+    "maxHealth": 100,
+    "maxMana": 100,
+    "equipped": [],
+    "inventory": [],
+    "spells": []
   },
   {
     "class": "Assassin",
-    "ATK": 55,
-    "INT": 35,
-    "DEF": 15,
-    "HP": 320
+    "attack": 10,
+    "defense": 5,
+    "health": 100,
+    "mana": 100,
+    "intelligence": 100,
+    "maxHealth": 100,
+    "maxMana": 100,
+    "equipped": [],
+    "inventory": [],
+    "spells": []
   },
   {
     "class": "Ranger",
-    "ATK": 60,
-    "INT": 30,
-    "DEF": 15,
-    "HP": 350
+    "attack": 10,
+    "defense": 5,
+    "health": 100,
+    "mana": 100,
+    "intelligence": 100,
+    "maxHealth": 100,
+    "maxMana": 100,
+    "equipped": [],
+    "inventory": [],
+    "spells": []
   }
 ]
