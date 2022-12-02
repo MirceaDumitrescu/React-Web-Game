@@ -22,6 +22,27 @@ function CharacterCreation() {
     console.log(selectedClass)
   }, [selectedClass])
 
+  interface charData {
+    name: string
+    class: string
+    level: number
+    location: string
+    exp: number
+    gold: number
+    userId: string
+  }
+
+  const getCharData = async (data: any) => {
+    try {
+      const response = await fetch('http://localhost:5050/api/character/ ')
+      const data = await response.json()
+      console.log(data)
+      return data
+    } catch (error: any) {
+      console.error(error)
+    }
+  }
+
   return (
     <div className='char'>
       <div className='char__container'>
@@ -56,7 +77,9 @@ function CharacterCreation() {
             HP: <span>{selectedClass.HP}</span>
           </div>
         </div>
-        <button className='char__btn'>Create Character</button>
+        <button className='char__btn' onClick={getCharData}>
+          Create Character
+        </button>
       </div>
       <div className='char__preview'>Your character here!</div>
     </div>
