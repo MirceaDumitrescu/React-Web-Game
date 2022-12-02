@@ -3,7 +3,7 @@ const configs = [
     label: 'Name',
     type: 'text',
     name: 'username',
-    className: 'card__form__group__input',
+    className: 'form__group__input',
 
     validation: {
       required: true,
@@ -13,7 +13,7 @@ const configs = [
     label: 'Email adress',
     type: 'email',
     name: 'email',
-    className: 'card__form__group__input',
+    className: 'form__group__input',
 
     validation: {
       required: true,
@@ -23,7 +23,7 @@ const configs = [
     label: 'Password',
     type: 'password',
     name: 'password',
-    className: 'card__form__group__input',
+    className: 'form__group__input',
 
     validation: {
       required: true,
@@ -35,7 +35,7 @@ const configs = [
     label: 'Confirm Password',
     type: 'password',
     name: 'confirmPass',
-    className: 'card__form__group__input',
+    className: 'form__group__input',
 
     validation: {
       required: true,
@@ -48,7 +48,7 @@ const configs = [
     label: '',
     type: 'submit',
     name: 'button',
-    className: 'card__form__btn',
+    className: 'form__btn',
     value: 'Register',
     id: 'submit_btn',
   },

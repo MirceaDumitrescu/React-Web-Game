@@ -1,0 +1,28 @@
+@import '../../variables.scss';
+
+.form__group {
+  @include flex(column, center, center);
+  gap: $gap-small;
+  margin-bottom: $spacing-small;
+  padding: $spacing-small;
+  width: 80%;
+
+  &__redirect {
+    cursor: pointer;
+    background-color: $primary-green;
+    font-family: $font-fam-primary;
+    padding: $spacing-small;
+    font-size: $fs-medium;
+    font-weight: $weight-600;
+    border: $border-0;
+    border-radius: $border-radius-10;
+    text-transform: uppercase;
+    width: 500px;
+
+    &__link {
+      text-decoration: none;
+      color: $primary-white;
+      font-size: $fs-small;
+    }
+  }
+}

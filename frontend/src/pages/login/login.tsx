@@ -1,8 +1,9 @@
 import './login.scss'
-import FormGenerator from '../formGenerator/formGenerator'
+import configBtnLogin from './config_btn_login'
+import FormGenerator from '../../components/formGenerator/formGenerator'
 import inputConfigs from './config_login'
-import { Link, useNavigate } from 'react-router-dom'
-import { successToast, errorToast, warningToast } from '../../components/toasts'
+import { useNavigate } from 'react-router-dom'
+import { successToast, errorToast } from '../../components/toasts/toasts'
 import { useDispatch } from 'react-redux'
 import { setLogin } from '../../features/reducers/loginStatusReducer'
 import { logUser } from '../../api/api.login'
@@ -22,7 +23,7 @@ const LoginComponent = () => {
       if (response.error) {
         errorToast(response.error)
       } else {
-        dispatch(setLogin({ email: data.email }))
+        dispatch(setLogin({ user: response.user }))
         successToast('Welcome!')
         return navigate('/profile')
       }
@@ -32,12 +33,13 @@ const LoginComponent = () => {
   }
 
   return (
-    <div className='card'>
-      <h4 className='card__form__title'>Login Form</h4>
-      <FormGenerator inputConfigs={inputConfigs} onSubmit={onSubmit}></FormGenerator>
-      <h4>
-        <Link to='/register'>Missing an account? Register here!</Link>
-      </h4>
+    <div className='form__login' data-testid='login-form'>
+      <h4 className='form__title'>Login Form</h4>
+      <FormGenerator
+        inputConfigs={inputConfigs}
+        onSubmit={onSubmit}
+        btnConfigs={configBtnLogin}
+      ></FormGenerator>
     </div>
   )
 }

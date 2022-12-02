@@ -1,35 +1,28 @@
 import { RouterProvider } from 'react-router-dom'
 import router from './routes'
 import './App.scss'
-import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { configureStore } from '@reduxjs/toolkit'
-import { Provider } from 'react-redux'
-import userReducer from './features/reducers/loginStatusReducer'
-
-const store = configureStore({
-  reducer: {
-    user: userReducer,
-  },
-})
+import DataLayerComponent from './features/utils/DataLayer'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   return (
     <div className='App'>
-      <Provider store={store}>
-        <RouterProvider router={router}></RouterProvider>
-        <ToastContainer
-          position='top-center'
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          theme='dark'
-        />
-      </Provider>
+      <DataLayerComponent>
+        <RouterProvider router={router} />
+      </DataLayerComponent>
+      <ToastContainer
+        position='bottom-right'
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='dark'
+      />
     </div>
   )
 }

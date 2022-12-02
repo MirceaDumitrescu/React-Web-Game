@@ -1,8 +1,9 @@
 import configs from './config_register'
-import FormGenerator from '../formGenerator/formGenerator'
+import configBtnRegister from './config_btn_register'
+import FormGenerator from '../../components/formGenerator/formGenerator'
 import './register.scss'
-import { Link, useNavigate } from 'react-router-dom'
-import { successToast, errorToast } from '../../components/toasts'
+import { useNavigate } from 'react-router-dom'
+import { successToast, errorToast } from '../../components/toasts/toasts'
 import { registerUser } from '../../api/auth.register'
 
 const RegisterComponent = () => {
@@ -21,28 +22,36 @@ const RegisterComponent = () => {
     password: string
   }
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     const userData: UserData = {
       username: data.username,
       email: data.email,
       password: data.password,
     }
     if (data.password === data.confirmPass) {
-      registerUser(userData)
-      successToast('Account was registered!')
-      return navigate('/login')
+      try {
+        const response = await registerUser(userData)
+        if (response.status === 200) {
+          successToast('User registered successfully')
+          navigate('/login')
+        }
+        errorToast('Something went wrong')
+      } catch (error) {
+        errorToast('Error creating user')
+      }
     } else {
       errorToast('Passwords do not match!')
     }
   }
 
   return (
-    <div className='card'>
-      <h4 className='card__form__title'>Register Form</h4>
-      <FormGenerator onSubmit={onSubmit} inputConfigs={configs}></FormGenerator>
-      <h4>
-        <Link to='/login'>Already have an account? Login here!</Link>
-      </h4>
+    <div className='form__register'>
+      <h4 className='form__title'>Register Form</h4>
+      <FormGenerator
+        onSubmit={onSubmit}
+        inputConfigs={configs}
+        btnConfigs={configBtnRegister}
+      ></FormGenerator>
     </div>
   )
 }

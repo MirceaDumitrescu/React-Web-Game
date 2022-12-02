@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Component should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="form__login"
+    data-testid="login-form"
+  >
+    <h4
+      class="form__title"
+    >
+      Login Form
+    </h4>
+    <div
+      class="form__group"
+    >
+      <form
+        class="form"
+      >
+        <div
+          class="form__group"
+        >
+          <label>
+            Email adress
+          </label>
+          <input
+            class="form__group__input"
+            data-testid="email"
+            name="email"
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="form__group"
+        >
+          <label>
+            Password
+          </label>
+          <input
+            class="form__group__input"
+            data-testid="password"
+            name="password"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          class="form__group"
+        >
+          <label />
+          <input
+            class="form__btn"
+            data-testid="button"
+            name="button"
+            type="submit"
+            value="Login"
+          />
+        </div>
+      </form>
+      <div
+        class="form__group"
+      >
+        <button
+          class="form__redirect"
+          data-testid="form-button"
+        >
+          <a
+            class="form__redirect__link"
+            href="/register"
+          >
+              Missing an account? Register here!
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="form__login"
+    data-testid="login-form"
+  >
+    <h4
+      class="form__title"
+    >
+      Login Form
+    </h4>
+    <div
+      class="form__group"
+    >
+      <form
+        class="form"
+      >
+        <div
+          class="form__group"
+        >
+          <label>
+            Email adress
+          </label>
+          <input
+            class="form__group__input"
+            data-testid="email"
+            name="email"
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="form__group"
+        >
+          <label>
+            Password
+          </label>
+          <input
+            class="form__group__input"
+            data-testid="password"
+            name="password"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          class="form__group"
+        >
+          <label />
+          <input
+            class="form__btn"
+            data-testid="button"
+            name="button"
+            type="submit"
+            value="Login"
+          />
+        </div>
+      </form>
+      <div
+        class="form__group"
+      >
+        <button
+          class="form__redirect"
+          data-testid="form-button"
+        >
+          <a
+            class="form__redirect__link"
+            href="/register"
+          >
+              Missing an account? Register here!
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
