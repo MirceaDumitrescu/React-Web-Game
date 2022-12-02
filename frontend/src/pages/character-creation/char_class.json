@@ -1,31 +1,27 @@
 [
   {
-    "id": 1,
-    "name": "Mage",
+    "class": "Mage",
     "ATK": 25,
     "INT": 48,
     "DEF": 20,
     "HP": 250
   },
   {
-    "id": 2,
-    "name": "Warrior",
+    "class": "Warrior",
     "ATK": 35,
     "INT": 20,
     "DEF": 40,
     "HP": 500
   },
   {
-    "id": 3,
-    "name": "Assassin",
+    "class": "Assassin",
     "ATK": 55,
     "INT": 35,
     "DEF": 15,
     "HP": 320
   },
   {
-    "id": 4,
-    "name": "Ranger",
+    "class": "Ranger",
     "ATK": 60,
     "INT": 30,
     "DEF": 15,
