@@ -19,34 +19,21 @@ function CharacterCreation() {
   const [characterName, setCharacterName] = useState('')
   const [charData, setCharData] = useState({})
 
-  // const inputRef: any = useRef(null)
-
-  // useEffect(() => {
-  //   console.log(selectedClass)
-  // }, [selectedClass])
-
   useEffect(() => {
-    setCharData(() => ({ name: characterName, selectedClass }))
-    console.log('Selected Class', selectedClass)
-    console.log('Char Data', charData)
+    setCharData({
+      name: characterName,
+      selectedClass,
+    })
   }, [characterName, selectedClass])
 
-  interface charData {
-    name: string
-    class: string
-    level: number
-    location: string
-    exp: number
-    gold: number
-    userId: string
+  const createCharacter = () => {
+    console.log(charData)
   }
 
   const getCharData = async (data: any) => {
     try {
       const response = await fetch('http://localhost:5050/api/character/ ')
       const data = await response.json()
-      // console.log(inputRef.current.value)
-      console.log(data)
       return data
     } catch (error: any) {
       console.error(error)
@@ -96,7 +83,7 @@ function CharacterCreation() {
             HP: <span>{selectedClass.HP}</span>
           </div>
         </div>
-        <button className='char__btn' onClick={getCharData}>
+        <button className='char__btn' onClick={createCharacter}>
           Create Character
         </button>
       </div>
