@@ -3,7 +3,7 @@ interface UserModel {
   password: string
 }
 
-export const logUser = async (client: UserModel): Promise<any> => {
+export const loginUsername = async (client: UserModel): Promise<any> => {
   const userData = {
     email: client.email,
     password: client.password,

@@ -1,10 +1,19 @@
 import { Navigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useLoggedIn, useAdminUser } from '../../features/hooks/hooks'
+import { User } from '../../features/interfaces/interfaces'
+import { SpinnerComponent } from '../SpinnerComponent/SpinnerComponent'
 
 const AuthGuard = ({ children }: any) => {
-  const loggedStatus = useSelector((state: any) => state.user.value)
+  // const data = JSON.parse(localStorage.getItem('user') as string) as User
 
-  return loggedStatus ? children : <Navigate to='/login' />
+  const isLoggedIn = useLoggedIn()
+  // const isAdmin = useAdminUser(data)
+
+  if (isLoggedIn === undefined) {
+    return <SpinnerComponent />
+  }
+
+  return isLoggedIn ? children : <Navigate to='/login' />
 }
 
 export default AuthGuard
