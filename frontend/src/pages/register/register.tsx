@@ -22,16 +22,23 @@ const RegisterComponent = () => {
     password: string
   }
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     const userData: UserData = {
       username: data.username,
       email: data.email,
       password: data.password,
     }
     if (data.password === data.confirmPass) {
-      registerUser(userData)
-      successToast('Account was registered!')
-      return navigate('/login')
+      try {
+        const response = await registerUser(userData)
+        if (response.status === 200) {
+          successToast('User registered successfully')
+          navigate('/login')
+        }
+        errorToast('Something went wrong')
+      } catch (error) {
+        errorToast('Error creating user')
+      }
     } else {
       errorToast('Passwords do not match!')
     }
