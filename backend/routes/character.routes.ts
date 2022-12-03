@@ -50,16 +50,29 @@ router.get("/", (req: any, res: any, next: any) => {
 router.get("/:charId", (req: any, res: any, next: any) => {
   const id = req.params.charId;
   Character.findById(id)
-    .select("name class userId _id")
+    .select("name class userId _id location level exp attack defense health")
     .exec()
     .then((doc) => {
       if (doc) {
         res.status(200).json({
-          product: doc,
-          request: {
-            type: "GET",
-            url: "http://localhost:5050/api/character",
-          },
+          name: doc.name,
+          class: doc.class,
+          level: doc.level,
+          location: doc.location,
+          exp: doc.exp,
+          gold: doc.gold,
+          userId: doc.userId,
+          attack: doc.attack,
+          defense: doc.defense,
+          health: doc.health,
+          maxHealth: doc.maxHealth,
+          mana: doc.mana,
+          maxMana: doc.maxMana,
+          intelligence: doc.intelligence,
+          equipped: doc.equipped,
+          inventory: doc.inventory,
+          spells: doc.spells,
+          _id: doc._id,
         });
       } else {
         res

@@ -1,6 +1,7 @@
 import './character-creation.scss'
 import { useEffect, useState, useMemo } from 'react'
 import classes from './char_class.json'
+import { createCharacter, updateCharacter, deleteCharacter } from '../../api/api.character'
 
 type CharacterClass = {
   class: string
@@ -29,28 +30,6 @@ function CharacterCreation() {
     console.log(selectedClass)
   }, [characterName, selectedClass])
 
-  const createCharacter = async () => {
-    const response = await fetch('http://localhost:5050/api/character/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(charData),
-    })
-    const data = await response.json()
-    console.log(data)
-  }
-
-  // const getCharData = async (data: any) => {
-  //   try {
-  //     const response = await fetch('http://localhost:5050/api/character/ ')
-  //     const data = await response.json()
-  //     return data
-  //   } catch (error: any) {
-  //     console.error(error)
-  //   }
-  // }
-
   return (
     <div className='char'>
       <div className='char__container'>
@@ -62,7 +41,6 @@ function CharacterCreation() {
             onChange={(e) => {
               setCharacterName(e.target.value)
             }}
-            // ref={inputRef}
             placeholder='Enter your character name...'
           />
         </div>
@@ -94,7 +72,12 @@ function CharacterCreation() {
             HP: <span>{selectedClass.health}</span>
           </div>
         </div>
-        <button className='char__btn' onClick={createCharacter}>
+        <button
+          className='char__btn'
+          onClick={() => {
+            createCharacter
+          }}
+        >
           Create Character
         </button>
       </div>
