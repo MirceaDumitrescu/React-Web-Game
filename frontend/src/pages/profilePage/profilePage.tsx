@@ -1,19 +1,21 @@
 import { useNavigate } from 'react-router-dom'
 import './profilePage.scss'
-import { useDispatch, useSelector } from 'react-redux'
 import { setLogout } from '../../features/reducers/loginStatusReducer'
 import { warningToast } from '../../components/toasts/toasts'
+import { useAppDispatch } from '../../features/hooks/hooks'
+import { User } from '../../features/interfaces/interfaces'
+import Cookies from 'universal-cookie'
 
 function ProfilePageComponent() {
   const navigate = useNavigate()
-
-  const dispatch = useDispatch()
-
-  const user = useSelector((state: any) => state.user.value)
+  const dispatch = useAppDispatch()
+  const cookies = new Cookies()
+  const user = JSON.parse(localStorage.getItem('user') as string) as User
 
   const logoutFunction = () => {
     dispatch(setLogout())
-    warningToast('You are logged out! Bye Bye!')
+    localStorage.removeItem('user')
+    cookies.remove('token')
     navigate('/login')
   }
 
@@ -21,8 +23,7 @@ function ProfilePageComponent() {
     <div className='profile'>
       <h1 className='profile__form__title'>Profile Page</h1>
       <div className='profile__form'>
-        <p>Username: {user.user?.username} </p>
-        <p>Email: {user.user?.email}</p>
+        <p>Email: {user.email}</p>
       </div>
       <button className='profile__form__btn' onClick={logoutFunction}>
         Log Out

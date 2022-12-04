@@ -5,7 +5,11 @@ import {
   loginValidation,
 } from "../middlewares/validations";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+import jwt, { JwtPayload } from "jsonwebtoken";
+
+interface IJwtPayload {
+  _id: string;
+}
 
 router.post("/register", async (req: any, res: any) => {
   const { username, password, email } = req.body;
@@ -54,6 +58,45 @@ router.post("/register", async (req: any, res: any) => {
       res.json({ message: err });
     }
   }
+});
+
+router.get("/", async (req: any, res: any) => {
+  //check if the authorization header is set
+  if (!req.headers.authorization) {
+    return res.status(401).json({
+      error: "You are not authorized to view this page",
+    });
+  }
+
+  //verify the token
+  const token = req.headers.authorization.split(" ")[1];
+  console.log("token", token);
+  if (!token) {
+    return res.status(401).json({
+      error: "You are not authorized to view this page",
+    });
+  }
+  const decoded = jwt.verify(
+    token,
+    process.env.TOKEN_SECRET as string
+  ) as IJwtPayload;
+  if (!decoded) {
+    return res.status(401).json({
+      error: "You are not authorized to view this page",
+    });
+  }
+
+  // check if the user exists
+  const user = await User.findOne({ _id: decoded._id });
+  if (!user) {
+    return res.status(401).json({
+      error: "You are not authorized to view this page",
+    });
+  }
+
+  return res.status(200).json({
+    message: "You are authorized to view this page",
+  });
 });
 
 router.post("/login", async (req: any, res: any) => {

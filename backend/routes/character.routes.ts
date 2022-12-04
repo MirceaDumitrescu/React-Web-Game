@@ -30,7 +30,7 @@ router.get("/", (req: any, res: any, next: any) => {
       res.status(200).json(response);
     })
     .catch((err: any) => {
-      console.log(err);
+      console.error(err);
       res.status(500).json({
         error: err,
       });
@@ -58,7 +58,7 @@ router.get("/:charId", (req: any, res: any, next: any) => {
       }
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
       res.status(500).json({ error: err });
     });
 });
@@ -85,7 +85,6 @@ router.post("/", async (req: any, res: any, next: any) => {
   character
     .save()
     .then((result) => {
-      console.log(result);
       res.status(201).json({
         message: "Created character successfully",
         createdCharacter: {
@@ -104,7 +103,7 @@ router.post("/", async (req: any, res: any, next: any) => {
       });
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
       res.status(500).json({
         error: err,
       });
@@ -144,7 +143,7 @@ router.patch("/:charId", (req: any, res: any, next: any) => {
       });
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
       res.status(500).json({
         error: err,
       });
@@ -166,7 +165,7 @@ router.delete("/:charId", (req: any, res: any, next: any) => {
       });
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
       res.status(500).json({
         error: err,
       });
