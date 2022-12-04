@@ -2,7 +2,7 @@
 
 .char {
   @include grid(2fr 2fr, center, center);
-  background-color: $transparent-black;
+  background-color: $primary-beige;
   width: 70%;
   margin: auto;
   padding: $spacing-large;
@@ -61,13 +61,27 @@
     padding: $spacing-small;
     font-family: $font-fam-primary;
     font-size: 15px;
+    box-shadow: 2px 2px;
   }
 
   &__preview {
+    @include flex(column, center, center);
     color: white;
     background-color: $transparent-white;
     padding: $spacing-medium;
     border-radius: $border-radius-10;
+
+    &__name {
+      color: $primary-black;
+    }
+
+    &__img {
+      // background-image: url('../../assets/chracter-sprites/mage/mage-gif.gif');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100px;
+      width: 100px;
+    }
   }
 
   .char__stats {

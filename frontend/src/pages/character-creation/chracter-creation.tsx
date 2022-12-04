@@ -1,7 +1,8 @@
 import './character-creation.scss'
 import { useEffect, useState, useMemo } from 'react'
 import classes from './char_class.json'
-import { createCharacter, updateCharacter, deleteCharacter } from '../../api/api.character'
+import '../../assets/chracter-sprites/mage/mage-gif.gif'
+import { createCharacter } from '../../api/api.character'
 
 type CharacterClass = {
   class: string
@@ -10,6 +11,8 @@ type CharacterClass = {
   health: number
   mana: number
   intelligence: number
+  description: string
+  sprite: string
 }
 
 function CharacterCreation() {
@@ -81,7 +84,12 @@ function CharacterCreation() {
           Create Character
         </button>
       </div>
-      <div className='char__preview'>Your character here!</div>
+
+      <div className='char__preview'>
+        <p className='char__preview__name'>{characterName}</p>
+        <img className='char__preview__img' src={selectedClass.sprite} />
+        <p className='char__preview__description'>{selectedClass.description}</p>
+      </div>
     </div>
   )
 }

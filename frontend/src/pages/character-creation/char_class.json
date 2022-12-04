@@ -10,7 +10,9 @@
     "maxMana": 100,
     "equipped": [],
     "inventory": [],
-    "spells": []
+    "spells": [],
+    "description": "Mage class is the first class!",
+    "sprite": "../../assets/character-sprites/mage/mage-gif.gif"
   },
   {
     "class": "Warrior",
@@ -23,7 +25,9 @@
     "maxMana": 100,
     "equipped": [],
     "inventory": [],
-    "spells": []
+    "spells": [],
+    "description": "Warrior class is the first class!",
+    "sprite": "../../assets/character-sprites/mage/mage-gif.gif"
   },
   {
     "class": "Assassin",
@@ -36,7 +40,9 @@
     "maxMana": 100,
     "equipped": [],
     "inventory": [],
-    "spells": []
+    "spells": [],
+    "description": "Assassins class is the first class!",
+    "sprite": "../../assets/character-sprites/mage/mage-gif.gif"
   },
   {
     "class": "Ranger",
@@ -49,6 +55,8 @@
     "maxMana": 100,
     "equipped": [],
     "inventory": [],
-    "spells": []
+    "spells": [],
+    "description": "Ranger class is the first class!",
+    "sprite": "../../assets/character-sprites/mage/mage-gif.gif"
   }
 ]
