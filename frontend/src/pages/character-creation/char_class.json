@@ -27,7 +27,7 @@
     "inventory": [],
     "spells": [],
     "description": "Warrior class is the first class!",
-    "sprite": "../../assets/character-sprites/mage/mage-gif.gif"
+    "sprite": "../../assets/character-sprites/warrior/warrior-gif.gif"
   },
   {
     "class": "Assassin",
@@ -42,7 +42,7 @@
     "inventory": [],
     "spells": [],
     "description": "Assassins class is the first class!",
-    "sprite": "../../assets/character-sprites/mage/mage-gif.gif"
+    "sprite": "../../assets/character-sprites/assasin/assasin-gif.gif"
   },
   {
     "class": "Ranger",
@@ -57,6 +57,6 @@
     "inventory": [],
     "spells": [],
     "description": "Ranger class is the first class!",
-    "sprite": "../../assets/character-sprites/mage/mage-gif.gif"
+    "sprite": "../../assets/character-sprites/ranger/ranger-gif.gif"
   }
 ]
