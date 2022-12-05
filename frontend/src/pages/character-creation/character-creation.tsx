@@ -11,8 +11,8 @@ type CharacterClass = {
   health: number
   mana: number
   intelligence: number
-  description: string
-  sprite: string
+  description?: string
+  sprite?: string
 }
 
 function CharacterCreation() {
@@ -30,7 +30,7 @@ function CharacterCreation() {
       ...selectedClass,
       userId: 'userId',
     })
-    console.log(selectedClass)
+    console.log(selectedClass.sprite)
   }, [characterName, selectedClass])
 
   return (
