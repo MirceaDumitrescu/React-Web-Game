@@ -11,8 +11,9 @@
     "equipped": [],
     "inventory": [],
     "spells": [],
-    "description": "Mage class is the first class!",
-    "sprite": "../../assets/character-sprites/mage/mage-gif.gif"
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, perferendis beatae! Obcaecati error ipsa, quaerat consectetur temporibus ab inventore accusantium rerum id porro corrupti animi voluptas ipsam minima quod ipsum.",
+    "sprite": "mageSprite",
+    "alt": "mage_class_image"
   },
   {
     "class": "Warrior",
@@ -26,8 +27,9 @@
     "equipped": [],
     "inventory": [],
     "spells": [],
-    "description": "Warrior class is the first class!",
-    "sprite": "../../assets/character-sprites/warrior/warrior-gif.gif"
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, perferendis beatae! Obcaecati error ipsa, quaerat consectetur temporibus ab inventore accusantium rerum id porro corrupti animi voluptas ipsam minima quod ipsum.",
+    "sprite": "warriorSprite",
+    "alt": "warrior_class_image"
   },
   {
     "class": "Assassin",
@@ -41,8 +43,9 @@
     "equipped": [],
     "inventory": [],
     "spells": [],
-    "description": "Assassins class is the first class!",
-    "sprite": "../../assets/character-sprites/assasin/assasin-gif.gif"
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, perferendis beatae! Obcaecati error ipsa, quaerat consectetur temporibus ab inventore accusantium rerum id porro corrupti animi voluptas ipsam minima quod ipsum.",
+    "sprite": "assasinSprite",
+    "alt": "assasin_class_image"
   },
   {
     "class": "Ranger",
@@ -56,7 +59,8 @@
     "equipped": [],
     "inventory": [],
     "spells": [],
-    "description": "Ranger class is the first class!",
-    "sprite": "../../assets/character-sprites/ranger/ranger-gif.gif"
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, perferendis beatae! Obcaecati error ipsa, quaerat consectetur temporibus ab inventore accusantium rerum id porro corrupti animi voluptas ipsam minima quod ipsum.",
+    "sprite": "rangerSprite",
+    "alt": "ranger_class_image"
   }
 ]

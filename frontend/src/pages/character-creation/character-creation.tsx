@@ -1,8 +1,16 @@
 import './character-creation.scss'
 import { useEffect, useState, useMemo } from 'react'
 import classes from './char_class.json'
-import '../../assets/chracter-sprites/mage/mage-gif.gif'
 import { createCharacter } from '../../api/api.character'
+import btnFrame from '../../assets/interface_elements/buttons/class_btn.png'
+import assasinSprite from '../../assets/chracter-sprites/assasin/assasin-gif.gif'
+import mageSprite from '../../assets/chracter-sprites/mage/mage-gif.gif'
+import warriorSprite from '../../assets/chracter-sprites/warrior/warrior-gif.gif'
+import rangerSprite from '../../assets/chracter-sprites/ranger/ranger-gif.gif'
+
+interface IcharSprites {
+  [key: string]: string | any
+}
 
 type CharacterClass = {
   class: string
@@ -13,6 +21,14 @@ type CharacterClass = {
   intelligence: number
   description?: string
   sprite?: string
+  alt?: string
+}
+
+const charSprites: IcharSprites = {
+  mageSprite: mageSprite,
+  warriorSprite: warriorSprite,
+  assasinSprite: assasinSprite,
+  rangerSprite: rangerSprite,
 }
 
 function CharacterCreation() {
@@ -30,7 +46,7 @@ function CharacterCreation() {
       ...selectedClass,
       userId: 'userId',
     })
-    console.log(selectedClass.sprite)
+    console.log(selectedClass)
   }, [characterName, selectedClass])
 
   return (
@@ -49,7 +65,7 @@ function CharacterCreation() {
         </div>
         <div className='char__config'>
           {classes.map((item: CharacterClass) => (
-            <div key={item.class}>
+            <div className='char__btn__container' key={item.class}>
               <button
                 className='char__btn'
                 onClick={() => {
@@ -84,10 +100,15 @@ function CharacterCreation() {
           Create Character
         </button>
       </div>
-
-      <div className='char__preview'>
+      <div className='char__container'>
         <p className='char__preview__name'>{characterName}</p>
-        <img className='char__preview__img' src={selectedClass.sprite} />
+        <div className='char__preview'>
+          <img
+            className='char__preview__img'
+            src={charSprites[selectedClass.sprite as unknown as string]}
+            alt={selectedClass.alt}
+          />
+        </div>
         <p className='char__preview__description'>{selectedClass.description}</p>
       </div>
     </div>

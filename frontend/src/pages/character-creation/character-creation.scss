@@ -54,7 +54,9 @@
     height: 60px;
     width: 120px;
     cursor: pointer;
-    background-color: $primary-green;
+    background-size: cover;
+    // background-color: $primary-green;
+    background: none;
     color: $primary-black;
     border: $border-2;
     border-radius: $border-radius-10;
@@ -66,21 +68,34 @@
 
   &__preview {
     @include flex(column, center, center);
+    height: 500px;
+    width: 100%;
     color: white;
-    background-color: $transparent-white;
+    background: url('../../assets/char-create-bg.gif');
+    background-size: cover;
     padding: $spacing-medium;
     border-radius: $border-radius-10;
+    text-align: center;
 
     &__name {
       color: $primary-black;
+      font-family: $font-fam-primary;
+      font-size: $fs-xlarge;
+      font-weight: $weight-700;
+      text-decoration: underline;
     }
 
     &__img {
-      // background-image: url('../../assets/chracter-sprites/assasin/assasin-gif.gif');
+      margin-top: 150px;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 100px;
-      width: 100px;
+      height: 250px;
+      width: 250px;
+    }
+
+    &__description {
+      text-align: center;
+      color: $primary-black;
     }
   }
 
@@ -110,6 +125,12 @@
     }
   }
 }
+
+// .char__btn__container {
+//   background-image: url('../../assets/interface_elements/buttons/class_btn.png');
+//   background-size: ;
+//   background-repeat: no-repeat;
+// }
 
 @media (max-width: 1100px) {
   .char {
