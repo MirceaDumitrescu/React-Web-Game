@@ -2,11 +2,15 @@ import './character-creation.scss'
 import { useEffect, useState, useMemo } from 'react'
 import classes from './char_class.json'
 import { createCharacter } from '../../api/api.character'
-import btnFrame from '../../assets/interface_elements/buttons/class_btn.png'
 import assasinSprite from '../../assets/chracter-sprites/assasin/assasin-gif.gif'
 import mageSprite from '../../assets/chracter-sprites/mage/mage-gif.gif'
 import warriorSprite from '../../assets/chracter-sprites/warrior/warrior-gif.gif'
 import rangerSprite from '../../assets/chracter-sprites/ranger/ranger-gif.gif'
+import torchMenu from '../../assets/interface_elements/create_element.gif'
+import mageSymbol from '../../assets/chracter-sprites/mage/mage-symbol.gif'
+import warriorSymbol from '../../assets/chracter-sprites/warrior/warrior-symbol.gif'
+import assasinSymbol from '../../assets/chracter-sprites/assasin/assasin-symbol.gif'
+import rangerSymbol from '../../assets/chracter-sprites/ranger/ranger-symbol.gif'
 
 interface IcharSprites {
   [key: string]: string | any
@@ -22,6 +26,7 @@ type CharacterClass = {
   description?: string
   sprite?: string
   alt?: string
+  symbol?: string
 }
 
 const charSprites: IcharSprites = {
@@ -29,6 +34,10 @@ const charSprites: IcharSprites = {
   warriorSprite: warriorSprite,
   assasinSprite: assasinSprite,
   rangerSprite: rangerSprite,
+  mageSymbol: mageSymbol,
+  warriorSymbol: warriorSymbol,
+  assasinSymbol: assasinSymbol,
+  rangerSymbol: rangerSymbol,
 }
 
 function CharacterCreation() {
@@ -52,6 +61,10 @@ function CharacterCreation() {
   return (
     <div className='char'>
       <div className='char__container'>
+        <img
+          className='char__container__symbol'
+          src={charSprites[selectedClass.symbol as unknown as string]}
+        />
         <div>
           <input
             className='char__input'
@@ -65,7 +78,7 @@ function CharacterCreation() {
         </div>
         <div className='char__config'>
           {classes.map((item: CharacterClass) => (
-            <div className='char__btn__container' key={item.class}>
+            <div key={item.class}>
               <button
                 className='char__btn'
                 onClick={() => {
@@ -78,18 +91,22 @@ function CharacterCreation() {
           ))}
         </div>
         <div className='char__stats'>
-          <div className='char__stats__group'>
-            ATK: <span>{selectedClass.attack}</span>
+          <img className='char__stats__img' src={torchMenu} />
+          <div className='char__stats__container'>
+            <div className='char__stats__group'>
+              ATK: <span>{selectedClass.attack}</span>
+            </div>
+            <div className='char__stats__group'>
+              INT: <span>{selectedClass.intelligence}</span>
+            </div>
+            <div className='char__stats__group'>
+              DEF: <span>{selectedClass.defense}</span>
+            </div>
+            <div className='char__stats__group'>
+              HP: <span>{selectedClass.health}</span>
+            </div>
           </div>
-          <div className='char__stats__group'>
-            INT: <span>{selectedClass.intelligence}</span>
-          </div>
-          <div className='char__stats__group'>
-            DEF: <span>{selectedClass.defense}</span>
-          </div>
-          <div className='char__stats__group'>
-            HP: <span>{selectedClass.health}</span>
-          </div>
+          <img className='char__stats__img' src={torchMenu} />
         </div>
         <button
           className='char__btn'
