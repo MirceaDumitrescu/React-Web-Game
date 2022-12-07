@@ -91,6 +91,9 @@
     text-align: center;
 
     &__name {
+      background-color: transparent;
+      border: none;
+      text-align: center;
       color: $primary-black;
       font-family: $font-fam-primary;
       font-size: $fs-xlarge;
