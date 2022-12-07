@@ -118,7 +118,7 @@ function CharacterCreation() {
         </button>
       </div>
       <div className='char__container'>
-        <p className='char__preview__name'>{characterName}</p>
+        <p className='char__preview__name'>{characterName} </p>
         <div className='char__preview'>
           <img
             className='char__preview__img'

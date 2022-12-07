@@ -21,7 +21,7 @@
       color: $primary-white;
     }
     &__symbol {
-      height: 150px;
+      height: 200px;
       width: 200px;
     }
   }
@@ -48,7 +48,7 @@
 
     &__name {
       text-align: center;
-      height: $spacing-large;
+      min-height: 200px;
       border: $border-1 $primary-green;
       border-radius: $border-radius-10;
       font-family: $font-fam-primary;
@@ -107,6 +107,9 @@
     }
 
     &__description {
+      border: ridge 3px $primary-yellow;
+      background-color: $transparent-white;
+      padding: $spacing-small;
       text-align: center;
       color: $primary-black;
     }
