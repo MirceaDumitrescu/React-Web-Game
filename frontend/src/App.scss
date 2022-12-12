@@ -9,6 +9,7 @@
 .App {
   background: url('./assets/menu-background.gif');
   background-repeat: no-repeat;
-  width: 100vw;
+  background-size: cover;
+  width: 100%;
   position: absolute;
 }
