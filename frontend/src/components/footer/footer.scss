@@ -1,0 +1,54 @@
+@import '../../variables.scss';
+
+.footer {
+  @include flex(column, center, center);
+  background-color: $small-transparent-black;
+  border-top: $border-2 $primary-black;
+  font-family: $font-fam-primary;
+
+  &__section__top {
+    @include flex(row, center, center);
+    gap: 150px;
+
+    &__logo {
+      width: 200px;
+    }
+
+    &__group {
+      &__list {
+        color: $primary-white;
+        list-style-type: none;
+        li {
+          margin: $spacing-small;
+        }
+      }
+    }
+  }
+
+  &__section__bottom {
+    @include flex(column, center, center);
+    gap: $spacing-large;
+    height: 160px;
+    width: 100%;
+    border-top: 1px solid $primary-white;
+    text-align: center;
+    background-color: $accent-grey;
+    padding-top: $spacing-xlarge;
+    padding-bottom: $spacing-xlarge;
+
+    &__group {
+      @include flex(row, center, center);
+      gap: $spacing-medium;
+
+      &__icon {
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+      }
+    }
+
+    &__end {
+      @include flex(column, center, center);
+    }
+  }
+}

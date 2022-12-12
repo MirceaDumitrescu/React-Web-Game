@@ -3,6 +3,7 @@
 .form__login {
   @include flex(column, center, center);
   text-align: center;
+  height: 100vh;
   font-family: $font-fam-primary;
   font-weight: $weight-600;
   color: $primary-white;
