@@ -84,7 +84,6 @@ $border-3: solid 3px;
 $spacing-small: 10px;
 $spacing-medium: 20px;
 $spacing-large: 30px;
-$spacing-xlarge: 40px;
 //////////////////////
 
 //////////////////////
@@ -100,9 +99,9 @@ $spacing-xlarge: 40px;
   align-items: $align-items;
 }
 
-@mixin flex($flex-direction, $justify-content, $align-items) {
+@mixin flex($flex-direction, $align-items, $justify-content) {
   display: flex;
   flex-direction: $flex-direction;
-  justify-content: $justify-content;
   align-items: $align-items;
+  justify-content: $justify-content;
 }
