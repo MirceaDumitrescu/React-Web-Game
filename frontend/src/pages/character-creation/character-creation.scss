@@ -1,0 +1,180 @@
+@import '../../variables.scss';
+
+.char {
+  @include grid(2fr 2fr, center, center);
+  background-color: $primary-beige;
+  width: 70%;
+  margin: 3% auto;
+  padding: $spacing-large;
+  font-family: $font-fam-primary;
+  border-radius: $spacing-small;
+  gap: $spacing-large;
+
+  &__title {
+    color: $primary-white;
+  }
+
+  &__container {
+    @include flex(column, center, center);
+    gap: $spacing-medium;
+    &__title {
+      color: $primary-white;
+    }
+    &__symbol {
+      height: 200px;
+      width: 200px;
+    }
+  }
+
+  &__config {
+    @include flex(row, center, center);
+    gap: $spacing-small;
+    background-color: $transparent-white;
+    padding: $spacing-medium;
+    border: $border-1 $primary-green;
+    border-radius: $spacing-small;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-small;
+    border-top: 4px ridge $primary-yellow;
+    border-left: 4px groove $primary-yellow;
+    border-right: 4px ridge $primary-yellow;
+    border-bottom: 4px groove $primary-yellow;
+    border-radius: $border-radius-10;
+    background-color: $transparent-white;
+    text-decoration: underline;
+
+    &__name {
+      text-align: center;
+      min-height: 200px;
+      border: $border-1 $primary-green;
+      border-radius: $border-radius-10;
+      font-family: $font-fam-primary;
+      font-weight: $weight-600;
+      background-color: $primary-black;
+      color: $primary-white;
+      width: 250px;
+    }
+  }
+
+  &__btn {
+    cursor: pointer;
+    width: 120px;
+    letter-spacing: 2px;
+    border-radius: $border-radius-10;
+    font-family: $font-fam-primary;
+    color: $primary-white;
+    font-size: $fs-medium;
+    font-weight: $weight-700;
+    text-shadow: 0 1px 3px #000;
+    text-align: center;
+    padding: 10px 0;
+    background: $primary-green;
+    border-top: 4px ridge $primary-yellow;
+    border-left: 4px groove $primary-yellow;
+    border-right: 4px ridge $primary-yellow;
+    border-bottom: 4px groove $primary-yellow;
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+  }
+
+  &__preview {
+    @include flex(column, center, center);
+    height: 500px;
+    width: 100%;
+    color: white;
+    background: url('../../assets/char-create-bg.gif');
+    background-size: cover;
+    padding: $spacing-medium;
+    border-radius: $border-radius-10;
+    text-align: center;
+
+    &__name {
+      background-color: transparent;
+      border: none;
+      text-align: center;
+      color: $primary-black;
+      font-family: $font-fam-primary;
+      font-size: $fs-xlarge;
+      font-weight: $weight-700;
+      text-decoration: underline;
+    }
+
+    &__img {
+      margin-top: 150px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px;
+      width: 250px;
+    }
+
+    &__description {
+      border: ridge 3px $primary-yellow;
+      background-color: $transparent-white;
+      padding: $spacing-small;
+      text-align: center;
+      color: $primary-black;
+    }
+  }
+
+  .char__stats {
+    @include flex(row, center, center);
+    gap: $spacing-large;
+
+    &__container {
+      @include grid(3fr 3fr, center, center);
+      color: $primary-black;
+      gap: $spacing-small;
+      background-color: $transparent-white;
+      padding: $spacing-medium;
+      border: $border-1 $primary-green;
+      border-radius: $border-radius-10;
+    }
+
+    &__img {
+      height: 100px;
+    }
+
+    &__group {
+      @include flex(row, center, center);
+      gap: $spacing-small;
+      background-color: $primary-white;
+      padding: $spacing-small;
+      border: $border-2;
+      border-radius: $border-radius-10;
+      height: 50px;
+      width: 100px;
+
+      span {
+        color: $primary-green;
+        font-size: $spacing-medium;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .char {
+    @include flex(column, center, center);
+    gap: $spacing-medium;
+  }
+}
+
+@media (max-width: 770px) {
+  .char {
+    @include flex(column, center, center);
+    &__config {
+      @include grid(2fr 2fr, center, center);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .char {
+    @include flex(column, center, center);
+    &__config {
+      @include flex(column, center, center);
+    }
+  }
+}
