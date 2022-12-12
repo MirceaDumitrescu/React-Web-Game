@@ -2,6 +2,7 @@
 
 .form__login {
   @include flex(column, center, center);
+  height: 100vh;
   text-align: center;
   font-family: $font-fam-primary;
   font-weight: $weight-600;

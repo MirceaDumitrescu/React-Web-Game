@@ -59,74 +59,76 @@ function CharacterCreation() {
   }, [characterName, selectedClass])
 
   return (
-    <div className='char'>
-      <div className='char__container'>
-        <img
-          className='char__container__symbol'
-          src={charSprites[selectedClass.symbol as unknown as string]}
-        />
-        <div>
-          <input
-            className='char__input'
-            type='text'
-            value={characterName}
-            onChange={(e) => {
-              setCharacterName(e.target.value)
-            }}
-            placeholder='Enter your character name...'
-          />
-        </div>
-        <div className='char__config'>
-          {classes.map((item: CharacterClass) => (
-            <div key={item.class}>
-              <button
-                className='char__btn'
-                onClick={() => {
-                  setSelectedClass(() => item)
-                }}
-              >
-                {item.class}
-              </button>
-            </div>
-          ))}
-        </div>
-        <div className='char__stats'>
-          <img className='char__stats__img' src={torchMenu} />
-          <div className='char__stats__container'>
-            <div className='char__stats__group'>
-              ATK: <span>{selectedClass.attack}</span>
-            </div>
-            <div className='char__stats__group'>
-              INT: <span>{selectedClass.intelligence}</span>
-            </div>
-            <div className='char__stats__group'>
-              DEF: <span>{selectedClass.defense}</span>
-            </div>
-            <div className='char__stats__group'>
-              HP: <span>{selectedClass.health}</span>
-            </div>
-          </div>
-          <img className='char__stats__img' src={torchMenu} />
-        </div>
-        <button
-          className='char__btn'
-          onClick={() => {
-            createCharacter
-          }}
-        >
-          Create Character
-        </button>
-      </div>
-      <div className='char__container'>
-        <input className='char__preview__name' placeholder={characterName} />
-        <div className='char__preview'>
+    <div className='overlay'>
+      <div className='char'>
+        <div className='char__container'>
           <img
-            className='char__preview__img'
-            src={charSprites[selectedClass.sprite as unknown as string]}
-            alt={selectedClass.alt}
+            className='char__container__symbol'
+            src={charSprites[selectedClass.symbol as unknown as string]}
           />
+          <div>
+            <input
+              className='char__input'
+              type='text'
+              value={characterName}
+              onChange={(e) => {
+                setCharacterName(e.target.value)
+              }}
+              placeholder='Enter your character name...'
+            />
+          </div>
+          <div className='char__config'>
+            {classes.map((item: CharacterClass) => (
+              <div key={item.class}>
+                <button
+                  className='char__btn'
+                  onClick={() => {
+                    setSelectedClass(() => item)
+                  }}
+                >
+                  {item.class}
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className='char__stats'>
+            <img className='char__stats__img' src={torchMenu} />
+            <div className='char__stats__container'>
+              <div className='char__stats__group'>
+                ATK: <span>{selectedClass.attack}</span>
+              </div>
+              <div className='char__stats__group'>
+                INT: <span>{selectedClass.intelligence}</span>
+              </div>
+              <div className='char__stats__group'>
+                DEF: <span>{selectedClass.defense}</span>
+              </div>
+              <div className='char__stats__group'>
+                HP: <span>{selectedClass.health}</span>
+              </div>
+            </div>
+            <img className='char__stats__img' src={torchMenu} />
+          </div>
+          <button
+            className='char__btn'
+            onClick={() => {
+              createCharacter
+            }}
+          >
+            Create Character
+          </button>
         </div>
-        <p className='char__preview__description'>{selectedClass.description}</p>
+        <div className='char__container'>
+          <input className='char__preview__name' placeholder={characterName} />
+          <div className='char__preview'>
+            <img
+              className='char__preview__img'
+              src={charSprites[selectedClass.sprite as unknown as string]}
+              alt={selectedClass.alt}
+            />
+          </div>
+          <p className='char__preview__description'>{selectedClass.description}</p>
+        </div>
       </div>
     </div>
   )
