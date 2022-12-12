@@ -19,6 +19,16 @@ router.get("/", (req: any, res: any, next: any) => {
             exp: doc.exp,
             gold: doc.gold,
             userId: doc.userId,
+            attack: doc.attack,
+            defense: doc.defense,
+            health: doc.health,
+            maxHealth: doc.maxHealth,
+            mana: doc.mana,
+            maxMana: doc.maxMana,
+            intelligence: doc.intelligence,
+            equipped: doc.equipped,
+            inventory: doc.inventory,
+            spells: doc.spells,
             _id: doc._id,
             request: {
               type: "GET",
@@ -40,16 +50,29 @@ router.get("/", (req: any, res: any, next: any) => {
 router.get("/:charId", (req: any, res: any, next: any) => {
   const id = req.params.charId;
   Character.findById(id)
-    .select("name class userId _id")
+    .select("name class userId _id location level exp attack defense health")
     .exec()
     .then((doc) => {
       if (doc) {
         res.status(200).json({
-          product: doc,
-          request: {
-            type: "GET",
-            url: "http://localhost:5050/api/character",
-          },
+          name: doc.name,
+          class: doc.class,
+          level: doc.level,
+          location: doc.location,
+          exp: doc.exp,
+          gold: doc.gold,
+          userId: doc.userId,
+          attack: doc.attack,
+          defense: doc.defense,
+          health: doc.health,
+          maxHealth: doc.maxHealth,
+          mana: doc.mana,
+          maxMana: doc.maxMana,
+          intelligence: doc.intelligence,
+          equipped: doc.equipped,
+          inventory: doc.inventory,
+          spells: doc.spells,
+          _id: doc._id,
         });
       } else {
         res
@@ -69,9 +92,11 @@ router.post("/", async (req: any, res: any, next: any) => {
     name: req.body.name,
     class: req.body.class,
     userId: req.body.userId,
-    location: req.body.location,
-    exp: req.body.exp,
-    gold: req.body.gold,
+    attack: req.body.attack,
+    defense: req.body.defense,
+    health: req.body.health,
+    mana: req.body.mana,
+    intelligence: req.body.intelligence,
   });
 
   const existingCharacter = await Character.findOne({ name: req.body.name });
@@ -91,14 +116,12 @@ router.post("/", async (req: any, res: any, next: any) => {
           name: result.name,
           class: result.class,
           userId: result.userId,
-          location: result.location,
-          exp: result.exp,
-          gold: result.gold,
+          attack: result.attack,
+          defense: result.defense,
+          health: result.health,
+          mana: result.mana,
+          intelligence: result.intelligence,
           _id: result._id,
-          request: {
-            type: "GET",
-            url: "http://localhost:5050/character/" + result._id,
-          },
         },
       });
     })
@@ -121,6 +144,16 @@ type ICharacter = {
   gold?: number;
   date?: Date;
   userId?: string;
+  attack?: number;
+  defense?: number;
+  health?: number;
+  maxHealth?: number;
+  mana?: number;
+  maxMana?: number;
+  intelligence?: number;
+  equipped?: string[];
+  inventory?: string[];
+  spells?: string[];
 };
 
 router.patch("/:charId", (req: any, res: any, next: any) => {
@@ -136,10 +169,6 @@ router.patch("/:charId", (req: any, res: any, next: any) => {
     .then((result) => {
       res.status(200).json({
         message: "Character updated",
-        request: {
-          type: "GET",
-          url: "http://localhost:3000/api/character/" + id,
-        },
       });
     })
     .catch((err) => {
@@ -157,11 +186,6 @@ router.delete("/:charId", (req: any, res: any, next: any) => {
     .then((result) => {
       res.status(200).json({
         message: "Character deleted",
-        request: {
-          type: "POST",
-          url: "http://localhost:3000/api/Character",
-          body: { name: "String", price: "Number" },
-        },
       });
     })
     .catch((err) => {

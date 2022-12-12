@@ -2,9 +2,9 @@
 
 .char {
   @include grid(2fr 2fr, center, center);
-  background-color: $transparent-black;
+  background-color: $primary-beige;
   width: 70%;
-  margin: auto;
+  margin: 3% auto;
   padding: $spacing-large;
   font-family: $font-fam-primary;
   border-radius: $spacing-small;
@@ -20,6 +20,10 @@
     &__title {
       color: $primary-white;
     }
+    &__symbol {
+      height: 200px;
+      width: 200px;
+    }
   }
 
   &__config {
@@ -34,12 +38,17 @@
   &__input {
     width: 100%;
     padding: $spacing-small;
-    border: $border-2 $primary-green;
+    border-top: 4px ridge $primary-yellow;
+    border-left: 4px groove $primary-yellow;
+    border-right: 4px ridge $primary-yellow;
+    border-bottom: 4px groove $primary-yellow;
     border-radius: $border-radius-10;
+    background-color: $transparent-white;
+    text-decoration: underline;
 
     &__name {
       text-align: center;
-      height: $spacing-large;
+      min-height: 200px;
       border: $border-1 $primary-green;
       border-radius: $border-radius-10;
       font-family: $font-fam-primary;
@@ -51,33 +60,81 @@
   }
 
   &__btn {
-    height: 60px;
-    width: 120px;
     cursor: pointer;
-    background-color: $primary-green;
-    color: $primary-black;
-    border: $border-2;
+    width: 120px;
+    letter-spacing: 2px;
     border-radius: $border-radius-10;
-    padding: $spacing-small;
     font-family: $font-fam-primary;
-    font-size: 15px;
+    color: $primary-white;
+    font-size: $fs-medium;
+    font-weight: $weight-700;
+    text-shadow: 0 1px 3px #000;
+    text-align: center;
+    padding: 10px 0;
+    background: $primary-green;
+    border-top: 4px ridge $primary-yellow;
+    border-left: 4px groove $primary-yellow;
+    border-right: 4px ridge $primary-yellow;
+    border-bottom: 4px groove $primary-yellow;
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
   }
 
   &__preview {
+    @include flex(column, center, center);
+    height: 500px;
+    width: 100%;
     color: white;
-    background-color: $transparent-white;
+    background: url('../../assets/char-create-bg.gif');
+    background-size: cover;
     padding: $spacing-medium;
     border-radius: $border-radius-10;
+    text-align: center;
+
+    &__name {
+      background-color: transparent;
+      border: none;
+      text-align: center;
+      color: $primary-black;
+      font-family: $font-fam-primary;
+      font-size: $fs-xlarge;
+      font-weight: $weight-700;
+      text-decoration: underline;
+    }
+
+    &__img {
+      margin-top: 150px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px;
+      width: 250px;
+    }
+
+    &__description {
+      border: ridge 3px $primary-yellow;
+      background-color: $transparent-white;
+      padding: $spacing-small;
+      text-align: center;
+      color: $primary-black;
+    }
   }
 
   .char__stats {
-    @include grid(2fr 2fr, center, center);
-    color: $primary-black;
-    gap: $spacing-small;
-    background-color: $transparent-white;
-    padding: $spacing-medium;
-    border: $border-1 $primary-green;
-    border-radius: $border-radius-10;
+    @include flex(row, center, center);
+    gap: $spacing-large;
+
+    &__container {
+      @include grid(3fr 3fr, center, center);
+      color: $primary-black;
+      gap: $spacing-small;
+      background-color: $transparent-white;
+      padding: $spacing-medium;
+      border: $border-1 $primary-green;
+      border-radius: $border-radius-10;
+    }
+
+    &__img {
+      height: 100px;
+    }
 
     &__group {
       @include flex(row, center, center);
