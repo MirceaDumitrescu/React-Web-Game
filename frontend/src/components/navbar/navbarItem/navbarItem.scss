@@ -1,0 +1,26 @@
+@import '../../../variables.scss';
+
+.navbar__nav__item {
+  font-family: $font-fam-primary;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  margin-right: 20px;
+  &__icon {
+    background-color: $transparent-white;
+    padding: 5px;
+    border-radius: $border-radius-50;
+    &:hover {
+      background-color: $primary-beige;
+      scale: 1.1;
+      transition: all 0.3s ease-in-out;
+      border: 2px ridge $primary-yellow;
+    }
+
+    svg {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+  }
+}
