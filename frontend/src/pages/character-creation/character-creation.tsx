@@ -65,6 +65,7 @@ function CharacterCreation() {
           <img
             className='char__container__symbol'
             src={charSprites[selectedClass.symbol as unknown as string]}
+            alt='character_img'
           />
           <div>
             <input
@@ -92,7 +93,7 @@ function CharacterCreation() {
             ))}
           </div>
           <div className='char__stats'>
-            <img className='char__stats__img' src={torchMenu} />
+            <img className='char__stats__img' src={torchMenu} alt='torch_gif' />
             <div className='char__stats__container'>
               <div className='char__stats__group'>
                 ATK: <span>{selectedClass.attack}</span>
@@ -107,7 +108,7 @@ function CharacterCreation() {
                 HP: <span>{selectedClass.health}</span>
               </div>
             </div>
-            <img className='char__stats__img' src={torchMenu} />
+            <img className='char__stats__img' src={torchMenu} alt='torch_gif' />
           </div>
           <button
             className='char__btn'
