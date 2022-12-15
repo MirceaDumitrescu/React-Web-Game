@@ -5,13 +5,17 @@
   display: flex;
   align-items: center;
   width: 120px;
-  margin-right: 20px;
+  margin-right: 40px;
+  cursor: pointer;
   &__icon {
-    background-color: $transparent-white;
+    text-align: center;
+    background-color: $primary-green;
     padding: 5px;
-    border-radius: $border-radius-50;
+    width: 100px;
+    border-radius: 15px;
+    // border-radius: $border-radius-50;
     &:hover {
-      background-color: $primary-beige;
+      background-color: $primary-yellow;
       scale: 1.1;
       transition: all 0.3s ease-in-out;
       border: 2px ridge $primary-yellow;

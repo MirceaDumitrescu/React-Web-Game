@@ -2,13 +2,12 @@
 
 .dropdown {
   position: absolute;
-  top: 70px;
+  top: 80px;
   width: 160px;
-  transform: translateX(-58%);
+  transform: translateX(-43%);
 
   &__menu {
-    background-color: white;
-    gap: 0;
+    gap: 2px;
     padding: 0px;
     width: 220px;
     display: flex;
@@ -26,10 +25,13 @@
       gap: 10px;
       text-decoration: none;
       color: black;
-      background-color: $primary-beige;
-      border: 3px ridge $primary-yellow;
+      background-color: $primary-green;
+      // border: 3px ridge $primary-yellow;
+      border-radius: 15px;
 
       &:hover {
+        background-color: $primary-yellow;
+        border: 2px ridge $primary-yellow;
         scale: 1.1;
         transition: all 0.3s ease-in-out;
       }
